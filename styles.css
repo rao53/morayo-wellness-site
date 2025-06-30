@@ -1,3 +1,9 @@
+/*
+ * Morayo Wellness Initiative Website Styles
+ * Copyright (c) 2025 Morayo Wellness Initiative
+ * Licensed under the MIT License
+ */
+
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -454,6 +460,21 @@ section h2 {
   padding-top: 2rem;
   text-align: center;
   color: #9ca3af;
+}
+
+.footer-bottom p {
+  margin-bottom: 0.5rem;
+}
+
+.footer-bottom a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #2563eb;
+  text-decoration: underline;
 }
 
 /* Responsive Design */
