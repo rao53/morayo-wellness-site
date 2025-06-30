@@ -6,6 +6,7 @@
   <title>Morayo Wellness Initiative - Restoring Hope Through Healing</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
 <body>
   <!-- Navigation -->
@@ -47,8 +48,8 @@
   <section id="home" class="hero">
     <div class="hero-content">
       <h1>Morayo Wellness Initiative</h1>
-      <h2 class="hero-subtitle">Restoring hope through healing.</h2>
-      <p>We offer free and low-cost therapy both in-person and online to women and girls across Nigeria. No one should have to suffer in silence.</p>
+      <h2 class="hero-subtitle">Restoring <span class="highlight">hope</span> through healing.</h2>
+      <p>We offer <span class="highlight">free and low-cost therapy</span> both in-person and online to women and girls across Nigeria. No one should have to suffer in silence.</p>
       <div class="hero-buttons">
         <a href="#what-we-offer" class="btn btn-primary">How to Get Help</a>
         <a href="#about" class="btn btn-secondary">Learn More</a>
@@ -57,6 +58,25 @@
         <div class="callout-box">
           <h3>Need tools to start feeling better today?</h3>
           <a href="#resources" class="btn btn-outline">Explore our free Self-Help Resources</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Impact Section -->
+  <section class="key-impact">
+    <div class="container">
+      <div class="impact-strip">
+        <div class="impact-item">
+          <span class="impact-highlight">Free & Low-Cost</span> mental health support
+        </div>
+        <div class="impact-divider">•</div>
+        <div class="impact-item">
+          Serving <span class="impact-highlight">30-50 women</span> annually
+        </div>
+        <div class="impact-divider">•</div>
+        <div class="impact-item">
+          Founded in <span class="impact-highlight">2025</span> with a mission
         </div>
       </div>
     </div>
@@ -86,6 +106,8 @@
         </div>
       </div>
     </div>
+
+
   </section>
 
   <!-- The Challenge -->
@@ -97,29 +119,37 @@
           <div class="challenge-icon">
             <i class="fas fa-chart-line"></i>
           </div>
-          <h3>Access Gap</h3>
-          <p>Fewer than 10% of Nigerians in need receive any mental health support. This gap is even wider for women facing abuse or trauma.</p>
+          <div class="challenge-content">
+            <h4>Access Gap</h4>
+            <p>Fewer than 10% of Nigerians in need receive any mental health support. This gap is even wider for women facing abuse or trauma.</p>
+          </div>
         </div>
         <div class="challenge-item">
           <div class="challenge-icon">
             <i class="fas fa-eye-slash"></i>
           </div>
-          <h3>Cultural Stigma</h3>
-          <p>Mental health is still a taboo topic in many Nigerian communities. Shame, myths, and misinformation discourage help-seeking.</p>
+          <div class="challenge-content">
+            <h4>Cultural Stigma</h4>
+            <p>Mental health is still a taboo topic in many Nigerian communities. Shame, myths, and misinformation discourage help-seeking.</p>
+          </div>
         </div>
         <div class="challenge-item">
           <div class="challenge-icon">
             <i class="fas fa-road"></i>
           </div>
-          <h3>Practical Barriers</h3>
-          <p>Traffic congestion, unsafe commutes, and transport costs can make in-person therapy out of reach.</p>
+          <div class="challenge-content">
+            <h4>Practical Barriers</h4>
+            <p>Traffic congestion, unsafe commutes, and transport costs can make in-person therapy out of reach.</p>
+          </div>
         </div>
         <div class="challenge-item">
           <div class="challenge-icon">
             <i class="fas fa-wifi"></i>
           </div>
-          <h3>Digital Divide</h3>
-          <p>Around 45% of Nigerian women have internet access—higher in Lagos (66%)—but many still rely on basic phones, limiting digital reach.</p>
+          <div class="challenge-content">
+            <h4>Digital Divide</h4>
+            <p>Around 45% of Nigerian women have internet access—higher in Lagos (66%)—but many still rely on basic phones, limiting digital reach.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -155,26 +185,46 @@
       <h2>Our Services</h2>
       <p class="section-subtitle">Professional counseling for women and girls - free or low cost</p>
       
-      <div class="services-grid">
-        <div class="service-card">
-          <i class="fas fa-clinic-medical"></i>
-          <h3>In-Person Therapy</h3>
-          <p>Safe, confidential sessions at vetted local clinics in Lagos.</p>
+      <div class="services-wrapper">
+        <div class="services-main">
+          <div class="service-card featured">
+            <i class="fas fa-heart"></i>
+            <h3>Trauma-Informed Therapy</h3>
+            <p>Culturally responsive counseling by licensed professionals who understand your journey.</p>
+            <div class="service-features">
+              <span><i class="fas fa-check"></i> Free or low-cost</span>
+              <span><i class="fas fa-check"></i> Confidential</span>
+              <span><i class="fas fa-check"></i> Safe space</span>
+            </div>
+          </div>
+          
+          <div class="services-grid">
+            <div class="service-card">
+              <i class="fas fa-clinic-medical"></i>
+              <h3>In-Person Therapy</h3>
+              <p>Safe sessions at vetted local clinics in Lagos.</p>
+            </div>
+            <div class="service-card">
+              <i class="fas fa-video"></i>
+              <h3>Teletherapy</h3>
+              <p>Video, phone, or SMS sessions from home.</p>
+            </div>
+            <div class="service-card">
+              <i class="fas fa-calendar-alt"></i>
+              <h3>Flexible Hours</h3>
+              <p>Evening and weekend appointments.</p>
+            </div>
+          </div>
         </div>
-        <div class="service-card">
-          <i class="fas fa-video"></i>
-          <h3>Teletherapy</h3>
-          <p>Secure video, phone, or SMS sessions from home.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-calendar-alt"></i>
-          <h3>Flexible Scheduling</h3>
-          <p>Evening and weekend appointments available.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-hands-helping"></i>
-          <h3>Complete Support</h3>
-          <p>Includes self-help resources and transport assistance.</p>
+        
+        <div class="services-highlight">
+          <h4>Support includes:</h4>
+          <ul>
+            <li><i class="fas fa-arrow-right"></i> Transport assistance</li>
+            <li><i class="fas fa-arrow-right"></i> Self-help resources</li>
+            <li><i class="fas fa-arrow-right"></i> SMS reminders</li>
+            <li><i class="fas fa-arrow-right"></i> Follow-up support</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -226,15 +276,25 @@
       <p class="section-subtitle">Educational materials and self-help tools designed for Nigerian women and girls</p>
       
       <div class="resources-grid">
-        <div class="resource-category">
+        <div class="resource-category" x-data="{ open: false }" @click="open = !open">
           <h3>Educational Materials</h3>
-          <p>Guides on trauma, therapy options, and mental health awareness</p>
-          <span class="coming-soon">Coming Soon</span>
+          <template x-if="!open">
+            <p>Guides on trauma, therapy options, and mental health awareness</p>
+          </template>
+          <template x-if="open">
+            <p class="highlight">Coming soon! We're curating culturally relevant guides, worksheets, and tip-sheets.</p>
+          </template>
+          <span class="coming-soon">Click to preview</span>
         </div>
-        <div class="resource-category">
+        <div class="resource-category" x-data="{ open: false }" @click="open = !open">
           <h3>Self-Help Toolkit</h3>
-          <p>Grounding exercises, breathing practices, and wellness guides</p>
-          <span class="coming-soon">Coming Soon</span>
+          <template x-if="!open">
+            <p>Grounding exercises, breathing practices, and wellness guides</p>
+          </template>
+          <template x-if="open">
+            <p class="highlight">Coming soon! Interactive breathing timers, grounding audio, and pocket cards.</p>
+          </template>
+          <span class="coming-soon">Click to preview</span>
         </div>
       </div>
     </div>
@@ -542,22 +602,27 @@
       });
 
       // Add fade-in to cards
-      const cards = document.querySelectorAll('.service-card, .involvement-card, .challenge-item, .matter-item, .evidence-item, .faq-item');
+      const cards = document.querySelectorAll('.service-card, .involvement-card, .challenge-item, .evidence-item');
       cards.forEach((card, index) => {
         card.classList.add('fade-in');
         card.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(card);
       });
 
-      // Add slide animations to different elements
+      // Add slide animations to about cards
       const aboutCards = document.querySelectorAll('.about-card');
       aboutCards.forEach((card, index) => {
-        if (index % 2 === 0) {
-          card.classList.add('slide-in-left');
-        } else {
-          card.classList.add('slide-in-right');
-        }
+        card.classList.add('fade-in');
+        card.style.transitionDelay = `${index * 0.15}s`;
         observer.observe(card);
+      });
+      
+      // Animate step items
+      const stepItems = document.querySelectorAll('.step-item');
+      stepItems.forEach((item, index) => {
+        item.classList.add('fade-in');
+        item.style.transitionDelay = `${index * 0.2}s`;
+        observer.observe(item);
       });
     });
 
