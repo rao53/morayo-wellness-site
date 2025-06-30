@@ -47,7 +47,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 90px;
 }
 
 .nav-logo .logo-img {
@@ -154,12 +154,12 @@ body {
 }
 
 .btn-primary {
-  background: #2563eb;
+  background: #a855f7;
   color: white;
 }
 
 .btn-primary:hover {
-  background: #1d4ed8;
+  background: #9333ea;
   transform: translateY(-2px);
 }
 
@@ -171,17 +171,17 @@ body {
 
 .btn-secondary:hover {
   background: white;
-  color: #2563eb;
+  color: #a855f7;
 }
 
 .btn-outline {
   background: transparent;
-  color: #2563eb;
-  border: 2px solid #2563eb;
+  color: #a855f7;
+  border: 2px solid #a855f7;
 }
 
 .btn-outline:hover {
-  background: #2563eb;
+  background: #a855f7;
   color: white;
 }
 
@@ -258,7 +258,7 @@ section h2 {
 }
 
 .support-item i {
-  color: #2563eb;
+  color: #a855f7;
   font-size: 1.25rem;
   flex-shrink: 0;
 }
@@ -280,7 +280,7 @@ section h2 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #2563eb;
+  color: #a855f7;
 }
 
 /* Challenge Grid */
@@ -305,14 +305,14 @@ section h2 {
   justify-content: center;
   width: 60px;
   height: 60px;
-  background: #eff6ff;
+  background: #faf5ff;
   border-radius: 50%;
   margin-bottom: 1.5rem;
 }
 
 .challenge-icon i {
   font-size: 1.5rem;
-  color: #2563eb;
+  color: #a855f7;
 }
 
 .challenge-item h4 {
@@ -342,7 +342,7 @@ section h2 {
 
 .approach-item i {
   font-size: 2.5rem;
-  color: #2563eb;
+  color: #a855f7;
   margin-bottom: 1rem;
 }
 
@@ -377,7 +377,7 @@ section h2 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #2563eb;
+  color: #a855f7;
 }
 
 .vmv-item ul {
@@ -419,7 +419,7 @@ section h2 {
 
 .service-card i {
   font-size: 3rem;
-  color: #2563eb;
+  color: #a855f7;
   margin-bottom: 1.5rem;
 }
 
@@ -480,7 +480,7 @@ section h2 {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: #2563eb;
+  background: #a855f7;
   color: white;
   border-radius: 50%;
   font-weight: 700;
@@ -506,19 +506,19 @@ section h2 {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  background: #dbeafe;
+  background: #faf5ff;
   padding: 1.5rem;
   border-radius: 10px;
   margin-top: 2rem;
 }
 
 .privacy-note i {
-  color: #2563eb;
+  color: #a855f7;
   font-size: 1.5rem;
 }
 
 .privacy-note p {
-  color: #1e40af;
+  color: #7c3aed;
   font-weight: 500;
   margin: 0;
 }
@@ -547,7 +547,7 @@ section h2 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #2563eb;
+  color: #a855f7;
 }
 
 .pilot-details h3 {
@@ -575,7 +575,7 @@ section h2 {
 
 .pilot-info-item i {
   font-size: 2.5rem;
-  color: #2563eb;
+  color: #a855f7;
   margin-bottom: 1rem;
 }
 
@@ -610,7 +610,7 @@ section h2 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #2563eb;
+  color: #a855f7;
 }
 
 .resource-list {
@@ -631,7 +631,7 @@ section h2 {
 }
 
 .resource-list i {
-  color: #2563eb;
+  color: #a855f7;
   font-size: 1.125rem;
   flex-shrink: 0;
 }
@@ -678,14 +678,14 @@ section h2 {
   justify-content: center;
   width: 70px;
   height: 70px;
-  background: #eff6ff;
+  background: #faf5ff;
   border-radius: 50%;
   margin-bottom: 1.5rem;
 }
 
 .matter-icon i {
   font-size: 1.75rem;
-  color: #2563eb;
+  color: #a855f7;
 }
 
 .matter-item h3 {
@@ -703,15 +703,15 @@ section h2 {
 /* Evidence & Impact Section */
 .impact-statement {
   text-align: center;
-  background: #eff6ff;
+  background: #faf5ff;
   padding: 3rem;
   border-radius: 20px;
-  border-left: 5px solid #2563eb;
+  border-left: 5px solid #a855f7;
 }
 
 .impact-statement p {
   font-size: 1.25rem;
-  color: #1e40af;
+  color: #7c3aed;
   font-weight: 500;
   margin: 0;
 }
@@ -738,7 +738,7 @@ section h2 {
 
 .partner-type i {
   font-size: 2.5rem;
-  color: #2563eb;
+  color: #a855f7;
   margin-bottom: 1rem;
 }
 
@@ -802,7 +802,7 @@ section h2 {
 }
 
 .partner-cta a {
-  color: #2563eb;
+  color: #a855f7;
   text-decoration: none;
   font-weight: 600;
 }
@@ -837,7 +837,7 @@ section h2 {
 
 .involvement-card i {
   font-size: 3rem;
-  color: #2563eb;
+  color: #a855f7;
   margin-bottom: 1.5rem;
 }
 
@@ -921,7 +921,7 @@ section h2 {
 
 .contact-item i {
   font-size: 1.25rem;
-  color: #2563eb;
+  color: #a855f7;
   width: 20px;
 }
 
@@ -965,7 +965,7 @@ section h2 {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #2563eb;
+  border-color: #a855f7;
 }
 
 .form-group textarea {
@@ -1029,7 +1029,7 @@ section h2 {
 }
 
 .footer-section ul li a:hover {
-  color: #2563eb;
+  color: #a855f7;
 }
 
 .social-links {
@@ -1051,7 +1051,7 @@ section h2 {
 }
 
 .social-links a:hover {
-  background: #2563eb;
+  background: #a855f7;
 }
 
 .footer-bottom {
@@ -1066,13 +1066,13 @@ section h2 {
 }
 
 .footer-bottom a {
-  color: #60a5fa;
+  color: #c084fc;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-bottom a:hover {
-  color: #2563eb;
+  color: #a855f7;
   text-decoration: underline;
 }
 
