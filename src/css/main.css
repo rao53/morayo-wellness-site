@@ -5521,37 +5521,54 @@ section h2.visible::after {
   position: relative;
 }
 
-/* Bridge SVG */
-.bridge-svg {
+/* Simple bridge line */
+.bridge-line {
   position: absolute;
-  top: -20px;
-  left: -100px;
-  right: -100px;
-  width: calc(100% + 200px);
-  height: 150px;
-  z-index: 2;
-  animation: bridgeGlow 3s ease-in-out infinite;
+  top: 50%;
+  left: 160px;
+  right: 160px;
+  height: 3px;
+  background: linear-gradient(90deg, #ef4444 0%, #a855f7 30%, #ec4899 70%, #3b82f6 100%);
+  transform: translateY(-50%);
+  z-index: 0;
+  opacity: 0.8;
+}
+
+.bridge-line::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  background: inherit;
+  filter: blur(3px);
+  opacity: 0.6;
 }
 
 .gap-bridge-container {
-  padding: 2rem 0;
+  padding: 4rem 0;
+  position: relative;
 }
 
 .gap-side {
-  flex: 1;
+  flex: 0 0 200px;
   text-align: center;
   padding: 2rem;
+  z-index: 1;
+  position: relative;
 }
 
 .gap-side h4 {
-  color: var(--primary);
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
   font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .gap-visual, .hope-visual {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   margin: 1rem auto;
   border-radius: 50%;
   position: relative;
@@ -5560,22 +5577,24 @@ section h2.visible::after {
 .gap-visual {
   background: linear-gradient(135deg, #fee2e2, #fecaca);
   border: 3px dashed #ef4444;
+  box-shadow: inset 0 0 20px rgba(239, 68, 68, 0.2);
 }
 
 .hope-visual {
   background: linear-gradient(135deg, #dbeafe, #bfdbfe);
   border: 3px solid #3b82f6;
   animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
 }
 
 .bridge-element {
-  flex: 1.5;
+  flex: 1;
   position: relative;
-  height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 .bridge-span {
@@ -5584,33 +5603,38 @@ section h2.visible::after {
 
 .bridge-text {
   background: white;
-  padding: 0.5rem 1.5rem;
+  padding: 0.75rem 2rem;
   border-radius: 25px;
   font-weight: 600;
   color: var(--primary);
   z-index: 3;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
 }
 
 .bridge-pillars {
   display: flex;
-  gap: 1rem;
-  margin-top: 3rem;
+  gap: 1.5rem;
   z-index: 3;
   position: relative;
 }
 
 .pillar {
-  background: rgba(168, 85, 247, 0.1);
-  padding: 0.25rem 0.75rem;
-  border-radius: 15px;
-  font-size: 0.875rem;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(236, 72, 153, 0.05) 100%);
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
   color: var(--primary);
-  font-weight: 500;
+  font-weight: 600;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  transition: all 0.3s ease;
+}
+
+.pillar:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(236, 72, 153, 0.1) 100%);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);
 }
 
 .bridge-message {
@@ -5752,31 +5776,35 @@ section h2.visible::after {
   line-height: 1.6;
 }
 
-/* Bridge animation */
-@keyframes bridgeGlow {
-  0%, 100% {
-    filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
-  }
-  50% {
-    filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.7));
-  }
-}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .gap-bridge-container {
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
     padding: 3rem 0;
   }
   
-  .bridge-svg {
-    position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    margin: 2rem 0;
+  .bridge-line {
+    display: none; /* Hide horizontal line on mobile */
+  }
+  
+  /* Simple vertical connecting line for mobile */
+  .gap-bridge-container::after {
+    content: '';
+    position: absolute;
+    top: 180px;
+    bottom: 180px;
+    left: 50%;
+    width: 4px;
+    background: linear-gradient(180deg, #ef4444 0%, #a855f7 30%, #ec4899 70%, #3b82f6 100%);
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+  
+  .gap-side {
+    flex: 0 0 auto;
   }
   
   .bridge-text {
