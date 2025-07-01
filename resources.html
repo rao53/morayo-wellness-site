@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources - Morayo Wellness Initiative</title>
+  <link rel="stylesheet" href="src/css/main.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script type="module" src="src/js/main.js"></script>
+</head>
+<body>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-indicator" id="scrollIndicator"></div>
+  
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="nav-logo">
+          <img src="src/images/brand/website_logo.png" alt="Morayo Wellness Initiative" class="logo-img">
+        </div>
+        <div class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="our-work.html">Our Work</a></li>
+          <li><a href="resources.html" class="active">Resources</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+        </div>
+      </div>
+      <div class="nav-right">
+        <div class="nav-social">
+          <a href="mailto:info@morayowellness.org" class="social-icon" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://instagram.com/MorayoWellness" target="_blank" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <a href="get-involved.html#donate" class="donate-btn">Donate</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-title">Resources & Support</h1>
+      <p class="page-subtitle">Free tools and resources designed to support your mental wellness journey</p>
+    </div>
+  </section>
+
+  <!-- Resources & Self-Help Section -->
+  <section class="resources-section enhanced">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-highlight">Resources & Self-Help</span>
+      </h2>
+      <p class="section-subtitle">All our resources are free to download, evidence-based, and designed for Nigerian women and girls.</p>
+      
+      <div class="resources-grid-enhanced" x-data="{ activeResource: null }">
+        <!-- Educational Resources -->
+        <div class="resource-category-card glassmorphism">
+          <div class="resource-header" @click="activeResource = activeResource === 'educational' ? null : 'educational'">
+            <div class="resource-icon-wrapper">
+              <i class="fas fa-book"></i>
+            </div>
+            <h3>Educational Resources</h3>
+            <i class="fas fa-chevron-down expand-icon" :class="activeResource === 'educational' ? 'rotate' : ''"></i>
+          </div>
+          <div class="resource-content" x-show="activeResource === 'educational'" x-transition>
+            <ul class="resource-list">
+              <li>
+                <i class="fas fa-file-pdf"></i>
+                <span>Short guides on trauma, stigma, therapy options, etc.</span>
+              </li>
+              <li>
+                <i class="fas fa-file-alt"></i>
+                <span>Fact sheets about teletherapy</span>
+              </li>
+              <li>
+                <i class="fas fa-lightbulb"></i>
+                <span>"Did You Know?" highlights</span>
+              </li>
+              <li>
+                <i class="fas fa-link"></i>
+                <span>Links to helplines or partner organizations</span>
+              </li>
+            </ul>
+            <div class="coming-soon-note glassmorphism">
+              <i class="fas fa-hourglass-half"></i>
+              <p>Full library coming soon! Check back for downloadable materials.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Self-Help Toolkit -->
+        <div class="resource-category-card glassmorphism">
+          <div class="resource-header" @click="activeResource = activeResource === 'toolkit' ? null : 'toolkit'">
+            <div class="resource-icon-wrapper">
+              <i class="fas fa-toolbox"></i>
+            </div>
+            <h3>Self-Help Toolkit</h3>
+            <i class="fas fa-chevron-down expand-icon" :class="activeResource === 'toolkit' ? 'rotate' : ''"></i>
+          </div>
+          <div class="resource-content" x-show="activeResource === 'toolkit'" x-transition>
+            <ul class="resource-list">
+              <li>
+                <i class="fas fa-spa"></i>
+                <span>Grounding exercises</span>
+              </li>
+              <li>
+                <i class="fas fa-wind"></i>
+                <span>Breathing practices</span>
+              </li>
+              <li>
+                <i class="fas fa-pen"></i>
+                <span>Journal prompts</span>
+              </li>
+              <li>
+                <i class="fas fa-clipboard-check"></i>
+                <span>How to prepare for your first therapy session</span>
+              </li>
+              <li>
+                <i class="fas fa-download"></i>
+                <span>Downloadable Mental Wellness Starter Guide (PDF)</span>
+              </li>
+            </ul>
+            <div class="download-preview glassmorphism">
+              <i class="fas fa-file-download"></i>
+              <p>Download options will be available soon</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Crisis Support -->
+        <div class="resource-category-card glassmorphism">
+          <div class="resource-header" @click="activeResource = activeResource === 'crisis' ? null : 'crisis'">
+            <div class="resource-icon-wrapper">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3>Crisis Support</h3>
+            <i class="fas fa-chevron-down expand-icon" :class="activeResource === 'crisis' ? 'rotate' : ''"></i>
+          </div>
+          <div class="resource-content" x-show="activeResource === 'crisis'" x-transition>
+            <div class="crisis-info">
+              <p class="crisis-note">If you're in immediate danger, please contact:</p>
+              <ul class="crisis-contacts">
+                <li>
+                  <i class="fas fa-phone"></i>
+                  <span>Emergency Services: 112</span>
+                </li>
+                <li>
+                  <i class="fas fa-shield-alt"></i>
+                  <span>Local Police Emergency Line</span>
+                </li>
+                <li>
+                  <i class="fas fa-hands-helping"></i>
+                  <span>Partner Crisis Centers (Coming Soon)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Resource Hub -->
+      <div class="resource-hub-visual">
+        <h3>How Our Resources Help</h3>
+        <div class="resource-journey">
+          <div class="journey-step">
+            <div class="step-icon glassmorphism">
+              <i class="fas fa-book-reader"></i>
+            </div>
+            <h4>Learn</h4>
+            <p>Understand trauma and healing</p>
+          </div>
+          <div class="journey-connector">
+            <svg width="100" height="2">
+              <line x1="0" y1="1" x2="100" y2="1" stroke="url(#resourceGradient)" stroke-width="2" stroke-dasharray="5,5">
+                <animate attributeName="stroke-dashoffset" values="10;0" dur="2s" repeatCount="indefinite"/>
+              </line>
+              <defs>
+                <linearGradient id="resourceGradient">
+                  <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="journey-step">
+            <div class="step-icon glassmorphism">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h4>Practice</h4>
+            <p>Use self-help techniques</p>
+          </div>
+          <div class="journey-connector">
+            <svg width="100" height="2">
+              <line x1="0" y1="1" x2="100" y2="1" stroke="url(#resourceGradient)" stroke-width="2" stroke-dasharray="5,5">
+                <animate attributeName="stroke-dashoffset" values="10;0" dur="2s" repeatCount="indefinite"/>
+              </line>
+            </svg>
+          </div>
+          <div class="journey-step">
+            <div class="step-icon glassmorphism">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h4>Heal</h4>
+            <p>Begin your wellness journey</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq-section enhanced">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-highlight">Frequently Asked Questions</span>
+      </h2>
+      
+      <div class="faq-container">
+        <div class="faq-item glassmorphism" x-data="{ open: false }">
+          <h3 @click="open = !open" class="faq-question" :class="open ? 'active' : ''">
+            <span>Who can access services?</span>
+            <i class="fas fa-plus" :class="open ? 'rotate' : ''"></i>
+          </h3>
+          <div class="faq-answer" x-show="open" x-transition>
+            <p>Any woman or girl in Nigeria affected by trauma. No income, insurance, or paperwork barrier.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item glassmorphism" x-data="{ open: false }">
+          <h3 @click="open = !open" class="faq-question" :class="open ? 'active' : ''">
+            <span>How do I choose between online and in-person?</span>
+            <i class="fas fa-plus" :class="open ? 'rotate' : ''"></i>
+          </h3>
+          <div class="faq-answer" x-show="open" x-transition>
+            <p>Choose what's safest and most convenient. Both offer quality, confidential care.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item glassmorphism" x-data="{ open: false }">
+          <h3 @click="open = !open" class="faq-question" :class="open ? 'active' : ''">
+            <span>Can I get help without a smartphone?</span>
+            <i class="fas fa-plus" :class="open ? 'rotate' : ''"></i>
+          </h3>
+          <div class="faq-answer" x-show="open" x-transition>
+            <p>Yes. We offer both video call therapy and in-person sessions.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item glassmorphism" x-data="{ open: false }">
+          <h3 @click="open = !open" class="faq-question" :class="open ? 'active' : ''">
+            <span>What if I can't afford transportation?</span>
+            <i class="fas fa-plus" :class="open ? 'rotate' : ''"></i>
+          </h3>
+          <div class="faq-answer" x-show="open" x-transition>
+            <p>We offer transport stipends—just mention this in your intake form.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item glassmorphism" x-data="{ open: false }">
+          <h3 @click="open = !open" class="faq-question" :class="open ? 'active' : ''">
+            <span>Are sessions confidential?</span>
+            <i class="fas fa-plus" :class="open ? 'rotate' : ''"></i>
+          </h3>
+          <div class="faq-answer" x-show="open" x-transition>
+            <p>Absolutely. All therapists follow professional ethical codes.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item glassmorphism" x-data="{ open: false }">
+          <h3 @click="open = !open" class="faq-question" :class="open ? 'active' : ''">
+            <span>How long are sessions?</span>
+            <i class="fas fa-plus" :class="open ? 'rotate' : ''"></i>
+          </h3>
+          <div class="faq-answer" x-show="open" x-transition>
+            <p>Standard sessions are 60 minutes, with 90 minutes available if needed.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item glassmorphism" x-data="{ open: false }">
+          <h3 @click="open = !open" class="faq-question" :class="open ? 'active' : ''">
+            <span>How do we know it works?</span>
+            <i class="fas fa-plus" :class="open ? 'rotate' : ''"></i>
+          </h3>
+          <div class="faq-answer" x-show="open" x-transition>
+            <p>Research shows reminders and digital tools improve therapy access and outcomes. We collect session data and feedback to refine our services in real time.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Visual Element -->
+      <div class="faq-visual">
+        <div class="question-bubbles">
+          <div class="bubble bubble-1"></div>
+          <div class="bubble bubble-2"></div>
+          <div class="bubble bubble-3"></div>
+        </div>
+        <div class="faq-cta glassmorphism">
+          <h3>Still have questions?</h3>
+          <p>We're here to help. Reach out anytime.</p>
+          <a href="get-involved.html#contact" class="btn btn-primary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="page-cta">
+    <div class="container">
+      <div class="cta-wrapper glassmorphism">
+        <h2>Ready to Begin Your Journey?</h2>
+        <p>Take the first step toward healing today.</p>
+        <div class="cta-buttons">
+          <a href="get-involved.html#contact" class="btn btn-primary">Get Help Now</a>
+          <a href="our-work.html" class="btn btn-outline">Learn About Our Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer simplified">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <h3>Morayo Wellness Initiative</h3>
+          <p>Restoring hope through healing.</p>
+          <div class="footer-social">
+            <a href="mailto:info@morayowellness.org" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://instagram.com/MorayoWellness" target="_blank" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/2349164513622" class="social-link">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-newsletter">
+          <h4>Stay Connected</h4>
+          <p>Get updates on our programs and resources.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+        
+        <div class="footer-quick-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="our-work.html">Our Services</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="get-involved.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Morayo Wellness Initiative. All rights reserved.</p>
+        <p>Website by <a href="https://github.com/rao53/morayo-wellness-site" target="_blank">Open Source Contributors</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="src/js/page-animations.js"></script>
+</body>
+</html> 

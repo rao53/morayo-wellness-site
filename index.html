@@ -4,24 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Morayo Wellness Initiative - Restoring Hope Through Healing</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="src/css/main.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script type="module" src="src/js/main.js"></script>
 </head>
 <body>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-indicator" id="scrollIndicator"></div>
+  
+  <!-- Floating Particles Background -->
+  <div class="particles-container" id="particlesContainer"></div>
+  
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-left">
         <div class="nav-logo">
-          <img src="website_logo.png" alt="Morayo Wellness Initiative" class="logo-img">
+          <img src="src/images/brand/website_logo.png" alt="Morayo Wellness Initiative" class="logo-img">
         </div>
         <div class="nav-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#what-we-offer">Services</a></li>
-          <li><a href="#evidence-impact">Impact</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="our-work.html">Our Work</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
         </div>
       </div>
       <div class="nav-right">
@@ -29,608 +36,245 @@
           <a href="mailto:info@morayowellness.org" class="social-icon" aria-label="Email">
             <i class="fas fa-envelope"></i>
           </a>
-          <a href="https://twitter.com/MorayoWellness" target="_blank" class="social-icon" aria-label="Twitter">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://linkedin.com/company/morayo-wellness-initiative" target="_blank" class="social-icon" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
           <a href="https://instagram.com/MorayoWellness" target="_blank" class="social-icon" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
         </div>
-        <a href="#get-involved" class="donate-btn">Donate</a>
+        <a href="get-involved.html#donate" class="donate-btn">Donate</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
+  <!-- Enhanced Hero Section -->
+  <section id="home" class="hero enhanced-hero">
+    <div class="gradient-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    
     <div class="hero-content">
-      <h1>Morayo Wellness Initiative</h1>
+      <h1 class="hero-title">
+        <span class="morayo-text">Morayo</span>
+        <span class="meaning-text">Wellness Initiative</span>
+      </h1>
+      <div class="animated-meaning">
+        <span class="meaning-reveal">Helping women rediscover joy</span>
+      </div>
       <h2 class="hero-subtitle">Restoring <span class="highlight">hope</span> through healing.</h2>
       <p>We offer <span class="highlight">free and low-cost therapy</span> both in-person and online to women and girls across Nigeria. No one should have to suffer in silence.</p>
       <div class="hero-buttons">
-        <a href="#what-we-offer" class="btn btn-primary">How to Get Help</a>
-        <a href="#about" class="btn btn-secondary">Learn More</a>
+        <a href="get-involved.html#contact" class="btn btn-primary">Get Help Now</a>
+        <a href="about.html" class="btn btn-secondary">Learn More</a>
       </div>
-      <div class="hero-callout">
+      <div class="hero-callout glassmorphism">
         <div class="callout-box">
           <h3>Need tools to start feeling better today?</h3>
-          <a href="#resources" class="btn btn-outline">Explore our free Self-Help Resources</a>
+          <a href="resources.html" class="btn btn-outline">Explore our free Self-Help Resources</a>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Key Impact Section -->
-  <section class="key-impact">
-    <div class="container">
-      <div class="impact-strip">
-        <div class="impact-item">
-          <span class="impact-highlight">Free & Low-Cost</span> mental health support
-        </div>
-        <div class="impact-divider">•</div>
-        <div class="impact-item">
-          Serving <span class="impact-highlight">30-50 women</span> annually
-        </div>
-        <div class="impact-divider">•</div>
-        <div class="impact-item">
-          Founded in <span class="impact-highlight">2025</span> with a mission
-        </div>
-      </div>
+    
+    <div class="scroll-indicator-arrow">
+      <i class="fas fa-chevron-down"></i>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
+  <!-- Brief About Section -->
+  <section class="home-about">
     <div class="container">
-      <h2>About Morayo Wellness Initiative</h2>
-      
-      <div class="about-intro">
-        <p class="lead">Morayo Wellness Initiative is a nonprofit founded in 2025, born out of a personal mission to ensure every woman and girl in Nigeria has access to high-quality, trauma-informed mental health care. Our name, Morayo, means "I see joy again," reflecting our commitment to help survivors rediscover strength and hope.</p>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-card">
-          <h3>Our Mission</h3>
-          <p>We believe healing is a right, not a luxury. We subsidize therapy, expand reach through online and clinic-based counseling, empower survivor voices, and work to normalize mental health care.</p>
+      <div class="about-preview">
+        <div class="about-preview-content">
+          <h2 class="section-title">
+            <span class="title-highlight">Who We Are</span>
+          </h2>
+          <p class="lead">Morayo Wellness Initiative is a nonprofit founded in 2025, born out of a personal mission to ensure every woman and girl in Nigeria has access to high-quality, trauma-informed mental health care.</p>
+          <p>Our name, Morayo, means "I see joy again," reflecting our commitment to help survivors of abuse, early marriage, and pregnancy trauma rediscover strength and hope.</p>
+          <a href="about.html" class="explore-link">
+            Discover Our Story <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
-        <div class="about-card">
-          <h3>Who We Serve</h3>
-          <p>We support girls and women in Nigeria who have experienced sexual abuse, early marriage, pregnancy trauma, postpartum depression, domestic violence, or other mental health challenges.</p>
-        </div>
-        <div class="about-card">
-          <h3>Our Approach</h3>
-          <p>We meet women where they are—physically and emotionally—offering both in-person and teletherapy options with flexible scheduling and survivor-centered design.</p>
-        </div>
-      </div>
-    </div>
-
-
-  </section>
-
-  <!-- The Challenge -->
-  <section id="challenge" class="challenge">
-    <div class="container">
-      <h2>The Challenge We're Addressing</h2>
-      <div class="challenge-grid">
-        <div class="challenge-item">
-          <div class="challenge-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <div class="challenge-content">
-            <h4>Access Gap</h4>
-            <p>Fewer than 10% of Nigerians in need receive any mental health support. This gap is even wider for women facing abuse or trauma.</p>
-          </div>
-        </div>
-        <div class="challenge-item">
-          <div class="challenge-icon">
-            <i class="fas fa-eye-slash"></i>
-          </div>
-          <div class="challenge-content">
-            <h4>Cultural Stigma</h4>
-            <p>Mental health is still a taboo topic in many Nigerian communities. Shame, myths, and misinformation discourage help-seeking.</p>
-          </div>
-        </div>
-        <div class="challenge-item">
-          <div class="challenge-icon">
-            <i class="fas fa-road"></i>
-          </div>
-          <div class="challenge-content">
-            <h4>Practical Barriers</h4>
-            <p>Traffic congestion, unsafe commutes, and transport costs can make in-person therapy out of reach.</p>
-          </div>
-        </div>
-        <div class="challenge-item">
-          <div class="challenge-icon">
-            <i class="fas fa-wifi"></i>
-          </div>
-          <div class="challenge-content">
-            <h4>Digital Divide</h4>
-            <p>Around 45% of Nigerian women have internet access—higher in Lagos (66%)—but many still rely on basic phones, limiting digital reach.</p>
+        <div class="about-preview-visual">
+          <div class="stats-showcase">
+            <div class="stat-card glassmorphism">
+              <h3>50</h3>
+              <p>Women supported annually</p>
+            </div>
+            <div class="stat-card glassmorphism">
+              <h3>2</h3>
+              <p>Lagos pilot locations</p>
+            </div>
+            <div class="stat-card glassmorphism">
+              <h3>100%</h3>
+              <p>Confidential care</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Founder Section -->
-  <section id="founder" class="founder">
+  <!-- Services Preview -->
+  <section class="home-services">
     <div class="container">
-      <h2>Meet Our Founder</h2>
-      <div class="founder-content">
-        <div class="founder-image">
-          <img src="mariam_sulaimon.jpeg" alt="Mariam Motunrayo Sulaimon" class="founder-photo">
+      <h2 class="section-title">
+        <span class="title-highlight">How We Help</span>
+      </h2>
+      <div class="services-preview">
+        <div class="service-preview-card glassmorphism">
+          <div class="service-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Trauma-Informed Therapy</h3>
+          <p>Professional counseling by licensed Nigerian therapists who understand your journey.</p>
         </div>
-        <div class="founder-info">
-          <h3>Mariam Motunrayo Sulaimon</h3>
-          <p class="founder-title">Founder & Mental Health Researcher</p>
-          <p>Mariam holds a Master's degree in Clinical Psychology from Teachers College, Columbia University, and a Bachelor of Science in Psychology from the University of Houston-Downtown. She has extensive experience in mental health research and digital mental health innovation, focusing on culturally responsive care and addressing structural inequities.</p>
-          <p>She believes mental health is a right, not a privilege, and is passionate about building community-centered solutions that restore hope and dignity. Her vision is to expand Morayo's reach to support 30–50 women and girls in Nigeria per year after the pilot phase.</p>
-          <div class="founder-social">
-            <a href="https://www.linkedin.com/in/mariam-sulaimon-173511185/" target="_blank" class="founder-linkedin">
-              <i class="fab fa-linkedin-in"></i>
-              linkedin.com
+        <div class="service-preview-card glassmorphism">
+          <div class="service-icon">
+            <i class="fas fa-laptop-medical"></i>
+          </div>
+          <h3>Flexible Access</h3>
+          <p>Choose between in-person sessions at trusted clinics or secure teletherapy from home.</p>
+        </div>
+        <div class="service-preview-card glassmorphism">
+          <div class="service-icon">
+            <i class="fas fa-hand-holding-heart"></i>
+          </div>
+          <h3>Holistic Support</h3>
+          <p>Transport stipends, self-help resources, and ongoing support throughout your healing journey.</p>
+        </div>
+      </div>
+      <div class="services-cta">
+        <a href="our-work.html" class="btn btn-primary">Explore Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Highlight -->
+  <section class="home-impact">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-highlight">Our Impact</span>
+      </h2>
+      <div class="impact-visual-simple">
+        <div class="impact-card-grid">
+          <div class="impact-card glassmorphism">
+            <div class="impact-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>90%</h3>
+            <p>Fewer than 10% of Nigerians in need receive mental health support</p>
+          </div>
+          <div class="impact-card glassmorphism">
+            <div class="impact-icon">
+              <i class="fas fa-globe-africa"></i>
+            </div>
+            <h3>66%</h3>
+            <p>Of Lagos women have internet access, enabling digital therapy</p>
+          </div>
+          <div class="impact-card glassmorphism">
+            <div class="impact-icon">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <h3>50</h3>
+            <p>Women we aim to support annually through our programs</p>
+          </div>
+        </div>
+        
+        <div class="bridging-gap-visual">
+          <h3>Bridging the Mental Health Gap</h3>
+          <div class="gap-bridge-container">
+            <div class="gap-side gap-left">
+              <h4>The Gap</h4>
+              <p>90% without access</p>
+              <div class="gap-visual"></div>
+            </div>
+            <div class="bridge-element">
+              <div class="bridge-text">Our Bridge</div>
+              <div class="bridge-pillars">
+                <div class="pillar">Technology</div>
+                <div class="pillar">Community</div>
+                <div class="pillar">Compassion</div>
+              </div>
+            </div>
+            <div class="gap-side gap-right">
+              <h4>Hope</h4>
+              <p>Accessible healing</p>
+              <div class="hope-visual"></div>
+            </div>
+            
+            <!-- Simple connecting line -->
+            <div class="bridge-line"></div>
+          </div>
+          <p class="bridge-message">With technology and community partnerships, we're making therapy accessible to those who need it most.</p>
+          <a href="our-work.html#evidence-impact" class="explore-link">
+            Learn More About Our Work <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="home-cta">
+    <div class="container">
+      <div class="cta-wrapper glassmorphism">
+        <h2>Ready to Begin Your Healing Journey?</h2>
+        <p>You don't have to face this alone. We're here to support you every step of the way.</p>
+        <div class="cta-buttons">
+          <a href="get-involved.html#contact" class="btn btn-primary">Start Today</a>
+          <a href="resources.html#faq" class="btn btn-outline">Have Questions?</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simplified Footer -->
+  <footer class="footer simplified">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <h3>Morayo Wellness Initiative</h3>
+          <p>Restoring hope through healing.</p>
+          <div class="footer-social">
+            <a href="mailto:info@morayowellness.org" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://instagram.com/MorayoWellness" target="_blank" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/2349164513622" class="social-link">
+              <i class="fab fa-whatsapp"></i>
             </a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="what-we-offer" class="services">
-    <div class="container">
-      <h2>Our Services</h2>
-      <p class="section-subtitle">Professional counseling for women and girls - free or low cost</p>
-      
-      <div class="services-wrapper">
-        <div class="services-main">
-          <div class="service-card featured">
-            <i class="fas fa-heart"></i>
-            <h3>Trauma-Informed Therapy</h3>
-            <p>Culturally responsive counseling by licensed professionals who understand your journey.</p>
-            <div class="service-features">
-              <span><i class="fas fa-check"></i> Free or low-cost</span>
-              <span><i class="fas fa-check"></i> Confidential</span>
-              <span><i class="fas fa-check"></i> Safe space</span>
-            </div>
-          </div>
-          
-          <div class="services-grid">
-            <div class="service-card">
-              <i class="fas fa-clinic-medical"></i>
-              <h3>In-Person Therapy</h3>
-              <p>Safe sessions at vetted local clinics in Lagos.</p>
-            </div>
-            <div class="service-card">
-              <i class="fas fa-video"></i>
-              <h3>Teletherapy</h3>
-              <p>Video, phone, or SMS sessions from home.</p>
-            </div>
-            <div class="service-card">
-              <i class="fas fa-calendar-alt"></i>
-              <h3>Flexible Hours</h3>
-              <p>Evening and weekend appointments.</p>
-            </div>
-          </div>
-        </div>
         
-        <div class="services-highlight">
-          <h4>Support includes:</h4>
-          <ul>
-            <li><i class="fas fa-arrow-right"></i> Transport assistance</li>
-            <li><i class="fas fa-arrow-right"></i> Self-help resources</li>
-            <li><i class="fas fa-arrow-right"></i> SMS reminders</li>
-            <li><i class="fas fa-arrow-right"></i> Follow-up support</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How to Get Help Section -->
-  <section id="get-help" class="get-help">
-    <div class="container">
-      <h2>How to Get Help</h2>
-      <p class="section-subtitle">Getting started is simple and confidential</p>
-      
-      <div class="steps-grid">
-        <div class="step-item">
-          <div class="step-number">1</div>
-          <h3>Complete Intake Form</h3>
-          <p>Share your location, contact info, and preferred session format.</p>
-        </div>
-        <div class="step-item">
-          <div class="step-number">2</div>
-          <h3>Get Matched</h3>
-          <p>We'll connect you with a qualified trauma-informed therapist.</p>
-        </div>
-        <div class="step-item">
-          <div class="step-number">3</div>
-          <h3>Schedule Sessions</h3>
-          <p>Book appointments that work with your schedule and needs.</p>
-        </div>
-        <div class="step-item">
-          <div class="step-number">4</div>
-          <h3>Begin Healing</h3>
-          <p>Start your confidential, subsidized therapy sessions.</p>
-        </div>
-      </div>
-      
-      <div class="cta-section">
-        <a href="#contact" class="btn btn-primary">Start Your Journey</a>
-        <p class="privacy-note">
-          <i class="fas fa-shield-alt"></i>
-          All sessions are completely confidential and follow professional ethics standards.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Resources Section -->
-  <section id="resources" class="resources">
-    <div class="container">
-      <h2>Free Resources</h2>
-      <p class="section-subtitle">Educational materials and self-help tools designed for Nigerian women and girls</p>
-      
-      <div class="resources-grid">
-        <div class="resource-category" x-data="{ open: false }" @click="open = !open" :class="open ? 'active' : ''">
-          <h3>Educational Materials</h3>
-          <div class="resource-body" x-ref="body" x-bind:style="open ? 'max-height:' + $refs.body.scrollHeight + 'px' : 'max-height:42px'">
-            <p x-show="!open">Guides on trauma, therapy options, and mental health awareness</p>
-            <p x-show="open" x-transition.opacity class="highlight">Coming soon! We're curating culturally relevant guides, worksheets, and tip-sheets.</p>
-          </div>
-          <span class="coming-soon" x-text="open ? 'Close' : 'Preview'"></span>
-        </div>
-        <div class="resource-category" x-data="{ open: false }" @click="open = !open" :class="open ? 'active' : ''">
-          <h3>Self-Help Toolkit</h3>
-          <div class="resource-body" x-ref="body2" x-bind:style="open ? 'max-height:' + $refs.body2.scrollHeight + 'px' : 'max-height:42px'">
-            <p x-show="!open">Grounding exercises, breathing practices, and wellness guides</p>
-            <p x-show="open" x-transition.opacity class="highlight">Coming soon! Interactive breathing timers, grounding audio, and pocket cards.</p>
-          </div>
-          <span class="coming-soon" x-text="open ? 'Close' : 'Preview'"></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Evidence & Impact Section -->
-  <section id="evidence-impact" class="evidence-impact">
-    <div class="container">
-      <h2>Evidence & Impact</h2>
-      <p class="section-subtitle">Our work is rooted in research, data, and real community feedback:</p>
-      
-      <div class="evidence-grid">
-        <div class="evidence-item">
-          <div class="evidence-icon">
-            <i class="fas fa-chart-bar"></i>
-          </div>
-          <div class="evidence-content">
-            <h3>Access Gap</h3>
-            <p>Only 10% of Nigerians needing mental health care receive it (WHO/NHAct).</p>
-          </div>
-        </div>
-        
-        <div class="evidence-item">
-          <div class="evidence-icon">
-            <i class="fas fa-bell"></i>
-          </div>
-          <div class="evidence-content">
-            <h3>Retention</h3>
-            <p>SMS/phone reminders boost attendance from 68% to 90%.</p>
-          </div>
-        </div>
-        
-        <div class="evidence-item">
-          <div class="evidence-icon">
-            <i class="fas fa-globe"></i>
-          </div>
-          <div class="evidence-content">
-            <h3>Digital Readiness</h3>
-            <p>66% of Lagos women use the internet, enabling teletherapy access.</p>
-          </div>
-        </div>
-        
-        <div class="evidence-item">
-          <div class="evidence-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <div class="evidence-content">
-            <h3>Inclusivity</h3>
-            <p>Phone/SMS options reach those without smartphones; satisfaction remains high.</p>
-          </div>
-        </div>
-        
-        <div class="evidence-item">
-          <div class="evidence-icon">
-            <i class="fas fa-search"></i>
-          </div>
-          <div class="evidence-content">
-            <h3>Outcomes</h3>
-            <p>Studies show teletherapy reduces depression and improves life quality.</p>
-          </div>
-        </div>
-        
-        <div class="evidence-item">
-          <div class="evidence-icon">
-            <i class="fas fa-gem"></i>
-          </div>
-          <div class="evidence-content">
-            <h3>Trust Channels</h3>
-            <p>Female health workers increase uptake by up to 40% when integrated in referral/outreach.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="impact-statement">
-        <p>We track attendance, outcomes, and satisfaction to improve our services continuously.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Get Involved Section -->
-  <section id="get-involved" class="get-involved">
-    <div class="container">
-      <h2>Get Involved</h2>
-      <p class="section-subtitle">Support our mission to make mental health care accessible</p>
-      
-      <div class="involvement-options">
-        <div class="involvement-card">
-          <i class="fas fa-donate"></i>
-          <h3>Donate</h3>
-          <p>Fund therapy sessions and support women in their healing journey. Every contribution makes a difference.</p>
-          <a href="#contact" class="btn btn-outline">Make a Donation</a>
-        </div>
-        <div class="involvement-card">
-          <i class="fas fa-user-md"></i>
-          <h3>Join as a Therapist</h3>
-          <p>Licensed mental health professionals can join our network to provide trauma-informed care.</p>
-          <a href="#contact" class="btn btn-outline">Apply to Join</a>
-        </div>
-        <div class="involvement-card">
-          <i class="fas fa-hands-helping"></i>
-          <h3>Volunteer</h3>
-          <p>Help with outreach, support services, or administrative tasks to expand our reach.</p>
-          <a href="#contact" class="btn btn-outline">Volunteer With Us</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <div class="contact-content">
-        <div class="contact-info">
-          <h3>Get in Touch</h3>
-          <p>Take the first step toward healing—reach out today.</p>
-          <div class="contact-details">
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <span>info@morayowellness.org</span>
-            </div>
-            <div class="contact-item">
-              <i class="fab fa-instagram"></i>
-              <span>@MorayoWellness</span>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-globe"></i>
-              <span>www.morayowellness.org</span>
-            </div>
-            <div class="contact-item">
-              <i class="fab fa-whatsapp"></i>
-              <span>(Coming Soon)</span>
-            </div>
-          </div>
-        </div>
-        <div class="contact-form">
-          <h3>Intake Form</h3>
-          <form>
-            <div class="form-group">
-              <input type="text" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-              <input type="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-              <input type="tel" placeholder="Your Phone Number" required>
-            </div>
-            <div class="form-group">
-              <select required>
-                <option value="">Your Location (LGA)</option>
-                <option value="agege">Agege</option>
-                <option value="ikorodu">Ikorodu</option>
-                <option value="other">Other (please specify in message)</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <select required>
-                <option value="">Preferred Session Format</option>
-                <option value="in-person">In-Person</option>
-                <option value="video">Video Call</option>
-                <option value="phone">Phone Call</option>
-                <option value="sms">SMS Support</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <select>
-                <option value="">Preferred Therapist Gender (Optional)</option>
-                <option value="female">Female</option>
-                <option value="male">Male</option>
-                <option value="no-preference">No Preference</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <textarea placeholder="Tell us briefly about your situation and what kind of support you're looking for. This information helps us match you with the right therapist." rows="5" required></textarea>
-            </div>
-            <div class="form-group">
-              <label>
-                <input type="checkbox" required>
-                I understand that this information will be kept confidential and used only for matching me with appropriate services.
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit Intake Form</button>
+        <div class="footer-newsletter">
+          <h4>Stay Connected</h4>
+          <p>Get updates on our programs and resources.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
           </form>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Morayo Wellness Initiative</h3>
-          <p>Restoring hope through healing. Making trauma-informed mental health care accessible to every woman and girl in Nigeria.</p>
-        </div>
-        <div class="footer-section">
+        
+        <div class="footer-quick-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#what-we-offer">Services</a></li>
-            <li><a href="#evidence-impact">Impact</a></li>
-            <li><a href="#get-involved">Get Involved</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Get Help</h4>
-          <ul>
-            <li><a href="#get-help">How to Get Help</a></li>
-            <li><a href="#resources">Free Resources</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-            <li><a href="mailto:info@morayowellness.org">Email Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="our-work.html">Our Services</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="get-involved.html#contact">Contact</a></li>
           </ul>
         </div>
       </div>
+      
       <div class="footer-bottom">
-        <p>&copy; <script>document.write(new Date().getFullYear())</script> Morayo Wellness Initiative. All rights reserved.</p>
-        <p>Sources available upon request. Based on peer-reviewed mental health research from Nigeria and WHO data.</p>
-        <p>Website code licensed under <a href="https://github.com/rao53/morayo-wellness-site/blob/main/LICENSE" target="_blank">MIT License</a></p>
+        <p>&copy; 2025 Morayo Wellness Initiative. All rights reserved.</p>
+        <p>Website by <a href="https://github.com/rao53/morayo-wellness-site" target="_blank">Open Source Contributors</a></p>
       </div>
     </div>
   </footer>
 
-  <script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          
-          // Close mobile menu if open
-          const navMenu = document.querySelector('.nav-menu');
-          const navToggle = document.querySelector('.nav-toggle');
-          if (navMenu.classList.contains('nav-menu-open')) {
-            navMenu.classList.remove('nav-menu-open');
-            const icon = navToggle.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          }
-        }
-      });
-    });
-
-    // Form submission handling
-    document.querySelector('form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Thank you for submitting your intake form! We will review your information and get back to you within 24-48 hours to discuss next steps.');
-      this.reset();
-    });
-
-    // Mobile menu toggle (basic implementation)
-    const navToggle = document.createElement('div');
-    navToggle.className = 'nav-toggle';
-    navToggle.innerHTML = '<i class="fas fa-bars"></i>';
-    document.querySelector('.nav-left').appendChild(navToggle);
-
-    navToggle.addEventListener('click', function() {
-      document.querySelector('.nav-menu').classList.toggle('nav-menu-open');
-      const icon = navToggle.querySelector('i');
-      if (icon.classList.contains('fa-bars')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-      } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      }
-    });
-
-    // Navbar scroll effect
-    window.addEventListener('scroll', function() {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('navbar-scrolled');
-      } else {
-        navbar.classList.remove('navbar-scrolled');
-      }
-    });
-
-    // Scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-
-    // Add animation classes and observe elements
-    document.addEventListener('DOMContentLoaded', function() {
-      // Add fade-in to section headings
-      const headings = document.querySelectorAll('section h2');
-      headings.forEach(heading => {
-        heading.classList.add('fade-in');
-        observer.observe(heading);
-      });
-
-      // Add fade-in to cards
-      const cards = document.querySelectorAll('.service-card, .involvement-card, .challenge-item, .evidence-item');
-      cards.forEach((card, index) => {
-        card.classList.add('fade-in');
-        card.style.transitionDelay = `${index * 0.1}s`;
-        observer.observe(card);
-      });
-
-      // Add slide animations to about cards
-      const aboutCards = document.querySelectorAll('.about-card');
-      aboutCards.forEach((card, index) => {
-        card.classList.add('fade-in');
-        card.style.transitionDelay = `${index * 0.15}s`;
-        observer.observe(card);
-      });
-      
-      // Animate step items
-      const stepItems = document.querySelectorAll('.step-item');
-      stepItems.forEach((item, index) => {
-        item.classList.add('fade-in');
-        item.style.transitionDelay = `${index * 0.2}s`;
-        observer.observe(item);
-      });
-    });
-
-    // Add gentle parallax effect to hero background
-    window.addEventListener('scroll', function() {
-      const scrolled = window.pageYOffset;
-      const parallax = document.querySelector('.hero::before');
-      if (parallax) {
-        const speed = scrolled * 0.5;
-        parallax.style.transform = `translateY(${speed}px)`;
-      }
-    });
-  </script>
+  <script src="src/js/home-animations.js"></script>
 </body>
 </html> 
