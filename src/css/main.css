@@ -343,7 +343,10 @@ body::before {
 
 /* Buttons */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   padding: 15px 35px;
   border-radius: 50px;
   text-decoration: none;
@@ -355,6 +358,7 @@ body::before {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  min-height: 50px;
 }
 
 .btn::before {
@@ -2070,6 +2074,14 @@ section h2.visible::after {
     font-size: 1.25rem;
   }
   
+  .animated-meaning {
+    margin-bottom: 1.5rem;
+  }
+  
+  .meaning-reveal {
+    font-size: 1.1rem;
+  }
+  
   .btn {
     padding: 10px 20px;
     font-size: 0.9rem;
@@ -3039,18 +3051,20 @@ section h2.visible::after {
 }
 
 .animated-meaning {
-  height: 40px;
-  margin-bottom: 1rem;
+  height: auto;
+  margin-bottom: 2.5rem;
   position: relative;
+  display: block;
 }
 
 .meaning-reveal {
-  position: absolute;
+  display: inline-block;
   font-size: 1.5rem;
   color: #6b46c1;
   font-style: italic;
   opacity: 0;
   animation: meaningFadeIn 2s ease-out 1.5s forwards;
+  white-space: nowrap;
 }
 
 @keyframes textReveal {
@@ -3437,6 +3451,7 @@ section h2.visible::after {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 /* Simplified Footer */
@@ -4637,6 +4652,11 @@ section h2.visible::after {
 
 .resource-content {
   padding: 0 2rem 2rem;
+  overflow: hidden;
+}
+
+[x-cloak] { 
+  display: none !important; 
 }
 
 .resource-list {
@@ -5428,5 +5448,357 @@ section h2.visible::after {
   
   .cta-stats {
     gap: 2rem;
+  }
+  
+  .impact-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Impact Cards for Evidence Section */
+.impact-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.impact-stat-card {
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.impact-stat-card:hover {
+  transform: translateY(-8px);
+}
+
+.stat-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(236, 72, 153, 0.05) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.stat-icon i {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.impact-stat-card h3 {
+  font-size: 3rem;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.impact-stat-card p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Bridging Gap Visual */
+.bridging-gap-visual {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.gap-bridge-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+  position: relative;
+}
+
+/* Bridge SVG */
+.bridge-svg {
+  position: absolute;
+  top: -20px;
+  left: -100px;
+  right: -100px;
+  width: calc(100% + 200px);
+  height: 150px;
+  z-index: 2;
+  animation: bridgeGlow 3s ease-in-out infinite;
+}
+
+.gap-bridge-container {
+  padding: 2rem 0;
+}
+
+.gap-side {
+  flex: 1;
+  text-align: center;
+  padding: 2rem;
+}
+
+.gap-side h4 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.gap-visual, .hope-visual {
+  width: 100px;
+  height: 100px;
+  margin: 1rem auto;
+  border-radius: 50%;
+  position: relative;
+}
+
+.gap-visual {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  border: 3px dashed #ef4444;
+}
+
+.hope-visual {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  border: 3px solid #3b82f6;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.bridge-element {
+  flex: 1.5;
+  position: relative;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bridge-span {
+  display: none; /* Hide the old span since we're using the SVG bridge */
+}
+
+.bridge-text {
+  background: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  color: var(--primary);
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bridge-pillars {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  z-index: 3;
+  position: relative;
+}
+
+.pillar {
+  background: rgba(168, 85, 247, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.875rem;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.bridge-message {
+  max-width: 600px;
+  margin: 2rem auto 1rem;
+  color: var(--text-secondary);
+}
+
+/* Vision, Mission & Values Restructured */
+.vmv-vision-showcase {
+  margin-bottom: 4rem;
+}
+
+.vision-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.vision-icon-large {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.vision-icon-large i {
+  font-size: 3rem;
+  color: white;
+}
+
+.vision-text h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.vision-statement {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* Mission Showcase */
+.vmv-mission-showcase {
+  margin-bottom: 4rem;
+}
+
+.mission-title, .values-title {
+  text-align: center;
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.mission-item {
+  text-align: center;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.mission-item:hover {
+  transform: translateY(-5px);
+}
+
+.mission-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.mission-icon i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.mission-item h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Values Carousel */
+.values-carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.value-card {
+  flex: 0 0 250px;
+  padding: 2rem;
+  text-align: center;
+  scroll-snap-align: start;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: scale(1.05);
+}
+
+.value-number {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(168, 85, 247, 0.1);
+}
+
+.value-card h4 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.value-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Bridge animation */
+@keyframes bridgeGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.7));
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gap-bridge-container {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem 0;
+  }
+  
+  .bridge-svg {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 2rem 0;
+  }
+  
+  .bridge-text {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 1rem;
+  }
+  
+  .vision-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .values-carousel {
+    gap: 1rem;
   }
 }

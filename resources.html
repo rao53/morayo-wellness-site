@@ -58,17 +58,17 @@
       </h2>
       <p class="section-subtitle">All our resources are free to download, evidence-based, and designed for Nigerian women and girls.</p>
       
-      <div class="resources-grid-enhanced">
+      <div class="resources-grid-enhanced" x-data="{ activeResource: null }">
         <!-- Educational Resources -->
-        <div class="resource-category-card glassmorphism" x-data="{ expanded: false }">
-          <div class="resource-header" @click="expanded = !expanded">
+        <div class="resource-category-card glassmorphism">
+          <div class="resource-header" @click="activeResource = activeResource === 'educational' ? null : 'educational'">
             <div class="resource-icon-wrapper">
               <i class="fas fa-book"></i>
             </div>
             <h3>Educational Resources</h3>
-            <i class="fas fa-chevron-down expand-icon" :class="expanded ? 'rotate' : ''"></i>
+            <i class="fas fa-chevron-down expand-icon" :class="activeResource === 'educational' ? 'rotate' : ''"></i>
           </div>
-          <div class="resource-content" x-show="expanded" x-transition>
+          <div class="resource-content" x-show="activeResource === 'educational'" x-transition>
             <ul class="resource-list">
               <li>
                 <i class="fas fa-file-pdf"></i>
@@ -95,15 +95,15 @@
         </div>
 
         <!-- Self-Help Toolkit -->
-        <div class="resource-category-card glassmorphism" x-data="{ expanded: false }">
-          <div class="resource-header" @click="expanded = !expanded">
+        <div class="resource-category-card glassmorphism">
+          <div class="resource-header" @click="activeResource = activeResource === 'toolkit' ? null : 'toolkit'">
             <div class="resource-icon-wrapper">
               <i class="fas fa-toolbox"></i>
             </div>
             <h3>Self-Help Toolkit</h3>
-            <i class="fas fa-chevron-down expand-icon" :class="expanded ? 'rotate' : ''"></i>
+            <i class="fas fa-chevron-down expand-icon" :class="activeResource === 'toolkit' ? 'rotate' : ''"></i>
           </div>
-          <div class="resource-content" x-show="expanded" x-transition>
+          <div class="resource-content" x-show="activeResource === 'toolkit'" x-transition>
             <ul class="resource-list">
               <li>
                 <i class="fas fa-spa"></i>
@@ -134,15 +134,15 @@
         </div>
 
         <!-- Crisis Support -->
-        <div class="resource-category-card glassmorphism" x-data="{ expanded: false }">
-          <div class="resource-header" @click="expanded = !expanded">
+        <div class="resource-category-card glassmorphism">
+          <div class="resource-header" @click="activeResource = activeResource === 'crisis' ? null : 'crisis'">
             <div class="resource-icon-wrapper">
               <i class="fas fa-phone-alt"></i>
             </div>
             <h3>Crisis Support</h3>
-            <i class="fas fa-chevron-down expand-icon" :class="expanded ? 'rotate' : ''"></i>
+            <i class="fas fa-chevron-down expand-icon" :class="activeResource === 'crisis' ? 'rotate' : ''"></i>
           </div>
-          <div class="resource-content" x-show="expanded" x-transition>
+          <div class="resource-content" x-show="activeResource === 'crisis'" x-transition>
             <div class="crisis-info">
               <p class="crisis-note">If you're in immediate danger, please contact:</p>
               <ul class="crisis-contacts">
@@ -248,7 +248,7 @@
             <i class="fas fa-plus" :class="open ? 'rotate' : ''"></i>
           </h3>
           <div class="faq-answer" x-show="open" x-transition>
-            <p>Yes. Phone or in-person sessions are always available.</p>
+            <p>Yes. We offer both video call therapy and in-person sessions.</p>
           </div>
         </div>
         
