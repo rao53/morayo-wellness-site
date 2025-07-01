@@ -276,25 +276,21 @@
       <p class="section-subtitle">Educational materials and self-help tools designed for Nigerian women and girls</p>
       
       <div class="resources-grid">
-        <div class="resource-category" x-data="{ open: false }" @click="open = !open">
+        <div class="resource-category" x-data="{ open: false }" @click="open = !open" :class="open ? 'active' : ''">
           <h3>Educational Materials</h3>
-          <template x-if="!open">
-            <p>Guides on trauma, therapy options, and mental health awareness</p>
-          </template>
-          <template x-if="open">
-            <p class="highlight">Coming soon! We're curating culturally relevant guides, worksheets, and tip-sheets.</p>
-          </template>
-          <span class="coming-soon">Click to preview</span>
+          <div class="resource-body" x-ref="body" x-bind:style="open ? 'max-height:' + $refs.body.scrollHeight + 'px' : 'max-height:42px'">
+            <p x-show="!open">Guides on trauma, therapy options, and mental health awareness</p>
+            <p x-show="open" x-transition.opacity class="highlight">Coming soon! We're curating culturally relevant guides, worksheets, and tip-sheets.</p>
+          </div>
+          <span class="coming-soon" x-text="open ? 'Close' : 'Preview'"></span>
         </div>
-        <div class="resource-category" x-data="{ open: false }" @click="open = !open">
+        <div class="resource-category" x-data="{ open: false }" @click="open = !open" :class="open ? 'active' : ''">
           <h3>Self-Help Toolkit</h3>
-          <template x-if="!open">
-            <p>Grounding exercises, breathing practices, and wellness guides</p>
-          </template>
-          <template x-if="open">
-            <p class="highlight">Coming soon! Interactive breathing timers, grounding audio, and pocket cards.</p>
-          </template>
-          <span class="coming-soon">Click to preview</span>
+          <div class="resource-body" x-ref="body2" x-bind:style="open ? 'max-height:' + $refs.body2.scrollHeight + 'px' : 'max-height:42px'">
+            <p x-show="!open">Grounding exercises, breathing practices, and wellness guides</p>
+            <p x-show="open" x-transition.opacity class="highlight">Coming soon! Interactive breathing timers, grounding audio, and pocket cards.</p>
+          </div>
+          <span class="coming-soon" x-text="open ? 'Close' : 'Preview'"></span>
         </div>
       </div>
     </div>
