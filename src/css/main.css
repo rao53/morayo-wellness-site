@@ -7,6 +7,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap');
 
+/* Import component styles */
+@import 'components/header.css';
+@import 'components/footer.css';
+@import 'components/forms.css';
+
+/* Global styles */
+:root {
+  --primary-color: #6b46c1;
+  --primary-dark: #553c9a;
+  --text-color: #2d3748;
+  --text-light: #718096;
+  --background-light: #f7fafc;
+  --max-width: 1200px;
+}
+
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -20,9 +35,9 @@ html {
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.7;
-  color: #2d3748;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--text-color);
   background: linear-gradient(180deg, #fafafa 0%, #f8fafc 50%, #ffffff 100%);
   min-height: 100vh;
   position: relative;
@@ -32,8 +47,28 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Manrope', 'Inter', sans-serif;
-  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+p {
+  margin-bottom: 1rem;
 }
 
 body::before {
@@ -59,9 +94,9 @@ body::before {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 2rem;
 }
 
 /* Navigation */
@@ -390,8 +425,8 @@ section {
 /* Scroll Animations */
 .fade-in {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .fade-in.visible {
@@ -452,13 +487,9 @@ section h2.visible::after {
 
 .section-subtitle {
   text-align: center;
-  font-size: 1.125rem;
-  color: #4a5568;
+  color: var(--text-light);
   margin-bottom: 3rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
+  font-size: 1.1rem;
 }
 
 .section-conclusion {
@@ -2106,10 +2137,7 @@ section h2.visible::after {
 
 /* Highlight utility */
 .highlight {
-  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 600;
+  color: var(--primary-color);
 }
 
 /* Hero subtitle underline only under the word 'hope' */
