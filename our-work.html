@@ -14,20 +14,29 @@
   <div class="scroll-indicator" id="scrollIndicator"></div>
   
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" x-data="{ mobileMenuOpen: false }">
     <div class="nav-container">
       <div class="nav-left">
         <div class="nav-logo">
           <img src="src/images/brand/website_logo.png" alt="Morayo Wellness Initiative" class="logo-img">
         </div>
-        <div class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="our-work.html" class="active">Our Work</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="get-involved.html">Get Involved</a></li>
-        </div>
+        <!-- Mobile Menu Toggle -->
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="nav-toggle" aria-label="Toggle menu">
+          <span class="hamburger-box" :class="{ 'menu-open': mobileMenuOpen }">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </span>
+        </button>
       </div>
+      <!-- Mobile Menu -->
+      <ul class="nav-menu" :class="{ 'nav-menu-open': mobileMenuOpen }">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="our-work.html" class="active">Our Work</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+      </ul>
       <div class="nav-right">
         <div class="nav-social">
           <a href="mailto:info@morayowellness.org" class="social-icon" aria-label="Email">
