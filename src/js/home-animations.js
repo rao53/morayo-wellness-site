@@ -35,8 +35,11 @@ function handleNavbarScroll() {
   }
 }
 
-// Mobile menu toggle
+// Mobile menu toggle - disabled because we're using Alpine.js in HTML
 function setupMobileMenu() {
+  // Commented out to prevent duplicate hamburger menus
+  return;
+  /*
   const navToggle = document.createElement('div');
   navToggle.className = 'nav-toggle';
   navToggle.innerHTML = '<i class="fas fa-bars"></i>';
@@ -58,6 +61,7 @@ function setupMobileMenu() {
       }
     });
   }
+  */
 }
 
 // Intersection Observer for animations
@@ -119,7 +123,7 @@ function setupNewsletterForm() {
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
   createParticles();
-  setupMobileMenu();
+  // setupMobileMenu(); // Commented out - using Alpine.js in HTML instead
   setupIntersectionObserver();
   setupNewsletterForm();
 });
