@@ -226,8 +226,63 @@ body::before {
 .nav-toggle {
   display: none;
   cursor: pointer;
-  font-size: 1.5rem;
-  color: #2d3748;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.nav-toggle:hover {
+  opacity: 0.7;
+}
+
+.nav-toggle:focus {
+  outline: 2px solid #a855f7;
+  outline-offset: 2px;
+}
+
+.hamburger-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  position: relative;
+}
+
+.hamburger-line {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #2d3748;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hamburger animation when menu is open */
+.hamburger-box.menu-open {
+  justify-content: center;
+}
+
+.hamburger-box.menu-open .hamburger-line {
+  position: absolute;
+}
+
+.hamburger-box.menu-open .hamburger-line:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.hamburger-box.menu-open .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.hamburger-box.menu-open .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 /* Hero Section */
@@ -1884,28 +1939,36 @@ section h2.visible::after {
     padding: 0.5rem 0;
   }
   .nav-container {
-    height: 100px;
-    flex-direction: column;
-    padding: 1rem 20px;
+    height: 70px;
+    padding: 0.75rem 1rem;
   }
   
   .nav-left {
     width: 100%;
     justify-content: space-between;
-    gap: 1rem;
+    align-items: center;
+    gap: 0;
   }
   
   .nav-logo .logo-img {
-    height: 80px;
+    height: 50px;
   }
   
   .nav-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 40px;
+    height: 40px;
   }
   
   .nav-menu {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 70px;
     left: 0;
     right: 0;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 245, 255, 0.95) 100%);
@@ -1918,6 +1981,20 @@ section h2.visible::after {
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 1000;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    list-style: none;
+  }
+  
+  .nav-menu li {
+    margin: 0.5rem 0;
+  }
+  
+  .nav-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-size: 1.1rem;
   }
   
   .nav-menu-open {
@@ -1927,42 +2004,165 @@ section h2.visible::after {
   }
   
   .nav-right {
-    width: 100%;
-    justify-content: center;
-    margin-top: 1rem;
-    gap: 1.5rem;
+    display: none;
   }
   
-  .nav-social {
-    gap: 1rem;
+  .hero {
+    padding: 100px 20px 60px;
+    min-height: auto;
   }
   
-  .social-icon {
-    width: 35px;
-    height: 35px;
-    font-size: 0.9rem;
+  .enhanced-hero {
+    overflow: hidden;
   }
   
-  .donate-btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+  .gradient-orbs {
+    opacity: 0.3;
   }
   
-  .hero-content h1 {
+  .particles-container {
+    display: none;
+  }
+  
+  .hero-content {
+    padding: 0;
+  }
+  
+  .hero-title {
+    margin-bottom: 1rem;
+  }
+  
+  .morayo-text {
     font-size: 2.5rem;
+    margin-bottom: 0.5rem;
   }
   
-  .hero-subtitle {
+  .meaning-text {
     font-size: 1.5rem;
   }
   
+  .animated-meaning {
+    margin-bottom: 1rem;
+  }
+  
+  .meaning-reveal {
+    font-size: 1.25rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
   .hero-content p {
-    font-size: 1.125rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
   }
   
   .hero-buttons {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .hero-callout {
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .callout-box h3 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+  
+  .callout-box .btn {
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .scroll-indicator-arrow {
+    display: none;
+  }
+  
+  section {
+    padding: 50px 0;
+  }
+  
+  section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .about-preview {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .stats-showcase {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .stat-card {
+    padding: 1.5rem;
+  }
+  
+  .stat-card h3 {
+    font-size: 2rem;
+  }
+  
+  .services-preview {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .service-preview-card {
+    padding: 2rem;
+  }
+  
+  .impact-card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .gap-bridge-container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0;
+  }
+  
+  .bridge-line {
+    display: none;
+  }
+  
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .newsletter-form input,
+  .newsletter-form .btn {
+    width: 100%;
+  }
+  
+  .footer-quick-links ul {
+    text-align: center;
   }
   
   .contact-content {
@@ -2039,52 +2239,131 @@ section h2.visible::after {
 
 @media (max-width: 480px) {
   .nav-container {
-    height: 90px;
-    padding: 0.75rem 15px;
-  }
-  
-  .nav-left {
-    gap: 0.5rem;
+    height: 60px;
+    padding: 0.75rem 1rem;
   }
   
   .nav-logo .logo-img {
-    height: 70px;
+    height: 40px;
   }
   
-  .nav-right {
-    gap: 1rem;
+  .nav-menu {
+    top: 60px;
+    max-height: calc(100vh - 60px);
   }
   
-  .social-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 0.8rem;
+  .hero {
+    padding: 80px 15px 40px;
   }
   
-  .donate-btn {
-    padding: 8px 16px;
-    font-size: 0.85rem;
-  }
-  
-  .hero-content h1 {
+  .morayo-text {
     font-size: 2rem;
+    line-height: 1.2;
   }
   
-  .hero-subtitle {
+  .meaning-text {
     font-size: 1.25rem;
   }
   
   .animated-meaning {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
   }
   
   .meaning-reveal {
     font-size: 1.1rem;
   }
   
+  .hero-subtitle {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
   .btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+  
+  .hero-callout {
+    padding: 1.25rem;
+  }
+  
+  .callout-box h3 {
+    font-size: 1rem;
+  }
+  
+  .callout-box .btn {
+    font-size: 0.85rem;
+    padding: 0.625rem 1.25rem;
+  }
+  
+  section {
+    padding: 40px 0;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .title-highlight {
+    font-size: 1.5rem;
+  }
+  
+  .lead {
+    font-size: 1rem;
+  }
+  
+  .stat-card h3 {
+    font-size: 1.75rem;
+  }
+  
+  .stat-card p {
+    font-size: 0.875rem;
+  }
+  
+  .service-preview-card {
+    padding: 1.5rem;
+  }
+  
+  .service-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .service-icon i {
+    font-size: 1.5rem;
+  }
+  
+  .service-preview-card h3 {
+    font-size: 1.125rem;
+  }
+  
+  .service-preview-card p {
+    font-size: 0.875rem;
+  }
+  
+  .impact-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .impact-card p {
+    font-size: 0.875rem;
+  }
+  
+  .cta-wrapper h2 {
+    font-size: 1.5rem;
+  }
+  
+  .cta-wrapper p {
+    font-size: 0.95rem;
   }
   
   .service-card,

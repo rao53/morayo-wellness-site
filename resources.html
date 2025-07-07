@@ -4,6 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resources - Morayo Wellness Initiative</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Resources - Morayo Wellness Initiative">
+  <meta name="description" content="Access free self-help resources, crisis support contacts, and frequently asked questions about mental health care for Nigerian women.">
+  <meta name="keywords" content="mental health resources, self-help, crisis support, therapy FAQ, Nigerian women, mental health tools">
+  <meta name="author" content="Morayo Wellness Initiative">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://morayowellness.org/resources.html">
+  <meta property="og:title" content="Resources - Morayo Wellness Initiative">
+  <meta property="og:description" content="Access free self-help resources, crisis support contacts, and mental health information for Nigerian women.">
+  <meta property="og:image" content="https://morayowellness.org/src/images/brand/website_logo.png">
+  <meta property="og:site_name" content="Morayo Wellness Initiative">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://morayowellness.org/resources.html">
+  <meta property="twitter:title" content="Resources - Morayo Wellness Initiative">
+  <meta property="twitter:description" content="Free self-help resources and crisis support for Nigerian women's mental health.">
+  <meta property="twitter:image" content="https://morayowellness.org/src/images/brand/website_logo.png">
+  
+  <!-- Structured Data / JSON-LD for Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NonProfit",
+    "name": "Morayo Wellness Initiative",
+    "alternateName": "MWI",
+    "url": "https://morayowellness.org",
+    "logo": "https://morayowellness.org/src/images/brand/website_logo.png",
+    "description": "A nonprofit providing free and low-cost therapy to Nigerian women who have experienced interpersonal violence.",
+    "foundingDate": "2025",
+    "founders": [{
+      "@type": "Person",
+      "name": "Mariam Sulaimon"
+    }],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "NG",
+      "addressRegion": "Lagos"
+    },
+    "sameAs": [
+      "https://instagram.com/MorayoWellness"
+    ],
+    "email": "info@morayowellness.org",
+    "telephone": "+2349164513622",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Nigeria"
+    },
+    "nonprofitStatus": "Nonprofit"
+  }
+  </script>
+  
   <link rel="stylesheet" href="src/css/main.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
@@ -14,20 +75,29 @@
   <div class="scroll-indicator" id="scrollIndicator"></div>
   
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" x-data="{ mobileMenuOpen: false }">
     <div class="nav-container">
       <div class="nav-left">
         <div class="nav-logo">
           <img src="src/images/brand/website_logo.png" alt="Morayo Wellness Initiative" class="logo-img">
         </div>
-        <div class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="our-work.html">Our Work</a></li>
-          <li><a href="resources.html" class="active">Resources</a></li>
-          <li><a href="get-involved.html">Get Involved</a></li>
-        </div>
+        <!-- Mobile Menu Toggle -->
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="nav-toggle" aria-label="Toggle menu">
+          <span class="hamburger-box" :class="{ 'menu-open': mobileMenuOpen }">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </span>
+        </button>
       </div>
+      <!-- Mobile Menu -->
+      <ul class="nav-menu" :class="{ 'nav-menu-open': mobileMenuOpen }">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="our-work.html">Our Work</a></li>
+        <li><a href="resources.html" class="active">Resources</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+      </ul>
       <div class="nav-right">
         <div class="nav-social">
           <a href="mailto:info@morayowellness.org" class="social-icon" aria-label="Email">
