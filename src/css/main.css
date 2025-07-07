@@ -6109,3 +6109,48 @@ section h2.visible::after {
     gap: 1rem;
   }
 }
+
+/* Crisis Support Always Open Styles */
+.resource-category-card.crisis-always-open .resource-header {
+  cursor: default;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.05) 0%, rgba(239, 68, 68, 0.03) 100%);
+}
+
+.resource-category-card.crisis-always-open .resource-header:hover {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.05) 0%, rgba(239, 68, 68, 0.03) 100%);
+}
+
+.resource-category-card.crisis-always-open .resource-icon-wrapper {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.15) 0%, rgba(239, 68, 68, 0.1) 100%);
+}
+
+.resource-category-card.crisis-always-open .resource-icon-wrapper i {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.always-visible-badge {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: subtlePulse 2s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+/* Resource Journey Visual */
