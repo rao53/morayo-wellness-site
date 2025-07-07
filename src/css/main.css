@@ -4875,30 +4875,31 @@ section h2.visible::after {
   flex-wrap: wrap;
   gap: 2rem;
   margin-bottom: 4rem;
-  align-items: stretch;
+  align-items: flex-start; /* Changed from stretch - cards only take their natural height */
 }
 
 .resource-category-card {
   border-radius: 25px;
-  overflow: visible;
+  overflow: hidden;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  min-height: 400px;
   text-align: center;
   width: 350px;
   max-width: 100%;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  /* Remove fixed min-height to allow natural collapsing */
 }
+
+
 
 .resource-category-card:hover {
   transform: translateY(-5px);
 }
 
-/* Ensure card height adjusts when collapsed */
-.resource-category-card {
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
+
 
 .resource-header {
   padding: 2rem;
@@ -4909,6 +4910,7 @@ section h2.visible::after {
   position: relative;
   transition: all 0.3s ease;
   justify-content: space-between;
+  margin-bottom: 0;
 }
 
 .resource-header:hover {
@@ -4966,19 +4968,23 @@ section h2.visible::after {
 
 .resource-content {
   padding: 1rem 1rem 2rem;
-  overflow: visible;
-  flex: 1;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 1;
   align-items: center;
   width: 100%;
+  flex: 1;
+  /* Remove min-height to allow content to collapse naturally */
 }
 
 [x-cloak] { 
   display: none !important; 
 }
+
+/* Remove the rule that maintains height when content is hidden */
+/* This was forcing hidden content to still take up space */
 
 .resource-list {
   list-style: none;
@@ -5762,6 +5768,15 @@ section h2.visible::after {
 @media (max-width: 768px) {
   .resources-grid-enhanced {
     grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+  
+  .resource-category-card {
+    min-height: auto;
+  }
+  
+  .resource-content {
+    /* Remove min-height on mobile too */
   }
   
   .resource-journey {
@@ -6189,10 +6204,39 @@ section h2.visible::after {
 
 /* Resource Category Card Background Override */
 .resource-category-card.glassmorphism {
+  /* Remove background from the card itself */
+  background: transparent;
+  border: none; /* Remove border from container */
+  box-shadow: none; /* Remove shadow from container */
+  padding-bottom: 0 !important;
+  overflow: visible;
+}
+
+/* Apply glassmorphism to header and content separately */
+.resource-category-card.glassmorphism .resource-header {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  border-radius: 25px 25px 0 0;
   border: 1px solid rgba(168, 85, 247, 0.1);
+  border-bottom: none;
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.1);
+}
+
+.resource-category-card.glassmorphism .resource-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0 0 25px 25px;
+  border: 1px solid rgba(168, 85, 247, 0.1);
+  border-top: none;
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.1);
+}
+
+/* When only header is visible (collapsed state) */
+.resource-category-card.glassmorphism .resource-header:not(.active) {
+  border-radius: 25px; /* Full border radius when collapsed */
+  border: 1px solid rgba(168, 85, 247, 0.1); /* Full border when collapsed */
 }
 
 /* Crisis Support Styles */
