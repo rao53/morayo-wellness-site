@@ -24,6 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Local mobile menu setup
 function setupMobileMenuLocal() {
+  // Don't create a new toggle button - we already have one in the HTML
+  // The HTML already has Alpine.js handling the toggle functionality
+  return;
+  
+  // Original code commented out to prevent duplicate hamburger menus
+  /*
   const navToggle = document.createElement('div');
   navToggle.className = 'nav-toggle';
   navToggle.innerHTML = '<i class="fas fa-bars"></i>';
@@ -45,6 +51,7 @@ function setupMobileMenuLocal() {
       }
     });
   }
+  */
 }
 
 // Scroll progress

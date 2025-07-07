@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Mobile menu toggle
+  // Mobile menu toggle - commented out because we're using Alpine.js in the HTML
+  /*
   const navToggle = document.createElement('div');
   navToggle.className = 'nav-toggle';
   navToggle.innerHTML = '<i class="fas fa-bars"></i>';
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
       icon.classList.add('fa-bars');
     }
   });
+  */
 
   // Navbar scroll effect
   window.addEventListener('scroll', function() {

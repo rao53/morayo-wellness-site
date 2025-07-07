@@ -3,7 +3,7 @@
 // and initializing any global functionality
 
 // Import module scripts
-import './navigation.js';
+// import './navigation.js'; // Commented out - was creating duplicate hamburger menus
 import './animations.js';
 import './forms.js';
 
