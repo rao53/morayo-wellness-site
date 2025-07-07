@@ -128,17 +128,17 @@
       </h2>
       <p class="section-subtitle">All our resources are free to download, evidence-based, and designed for Nigerian women and girls.</p>
       
-      <div class="resources-grid-enhanced" x-data="{ educational: true, toolkit: true, crisis: true }">
+      <div class="resources-grid-enhanced">
         <!-- Educational Resources -->
-        <div class="resource-category-card glassmorphism">
-          <div class="resource-header" @click="educational = !educational">
+        <div class="resource-category-card glassmorphism" x-data="{ open: true }">
+          <div class="resource-header" @click="open = !open" :class="open ? 'active' : ''">
             <div class="resource-icon-wrapper">
               <i class="fas fa-book"></i>
             </div>
             <h3>Educational Resources</h3>
-            <i class="fas fa-chevron-down expand-icon" :class="educational ? 'rotate' : ''"></i>
+            <i class="fas fa-chevron-down expand-icon" :class="open ? 'rotate' : ''"></i>
           </div>
-          <div class="resource-content" x-show="educational" x-transition>
+          <div class="resource-content" x-show="open" x-transition>
             <ul class="resource-list">
               <li>
                 <i class="fas fa-file-pdf"></i>
@@ -165,15 +165,15 @@
         </div>
 
         <!-- Self-Help Toolkit -->
-        <div class="resource-category-card glassmorphism">
-          <div class="resource-header" @click="toolkit = !toolkit">
+        <div class="resource-category-card glassmorphism" x-data="{ open: true }">
+          <div class="resource-header" @click="open = !open" :class="open ? 'active' : ''">
             <div class="resource-icon-wrapper">
               <i class="fas fa-toolbox"></i>
             </div>
             <h3>Self-Help Toolkit</h3>
-            <i class="fas fa-chevron-down expand-icon" :class="toolkit ? 'rotate' : ''"></i>
+            <i class="fas fa-chevron-down expand-icon" :class="open ? 'rotate' : ''"></i>
           </div>
-          <div class="resource-content" x-show="toolkit" x-transition>
+          <div class="resource-content" x-show="open" x-transition>
             <ul class="resource-list">
               <li>
                 <i class="fas fa-spa"></i>
@@ -204,15 +204,15 @@
         </div>
 
         <!-- Crisis Support -->
-        <div class="resource-category-card glassmorphism crisis-always-open">
-          <div class="resource-header">
+        <div class="resource-category-card glassmorphism crisis-support" x-data="{ open: true }">
+          <div class="resource-header" @click="open = !open" :class="open ? 'active' : ''">
             <div class="resource-icon-wrapper">
               <i class="fas fa-phone-alt"></i>
             </div>
             <h3>Crisis Support</h3>
-            <span class="always-visible-badge">Always Available</span>
+            <i class="fas fa-chevron-down expand-icon" :class="open ? 'rotate' : ''"></i>
           </div>
-          <div class="resource-content" style="display: block;">
+          <div class="resource-content" x-show="open" x-transition>
             <div class="crisis-info">
               <p class="crisis-note">If you're in immediate danger, please contact:</p>
               <ul class="crisis-contacts">
