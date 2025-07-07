@@ -748,8 +748,29 @@ section h2.visible::after {
   font-size: 1rem;
 }
 
-.founder-social {
-  margin-top: 2rem;
+.founder-connect {
+  margin-top: 1.5rem;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.founder-connect .linkedin-link {
+  color: #0077b5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.founder-connect .linkedin-link:hover {
+  color: #005885;
+  text-decoration: underline;
+}
+
+.founder-connect .linkedin-link i {
+  font-size: 0.875rem;
 }
 
 .founder-linkedin {
@@ -3985,7 +4006,8 @@ section h2.visible::after {
   padding: 80px 0;
   background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
   max-width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
+  position: relative;
 }
 
 .founder-content-enhanced {
@@ -3995,6 +4017,8 @@ section h2.visible::after {
   align-items: center;
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+  overflow: visible;
 }
 
 .founder-image-wrapper {
@@ -4013,14 +4037,15 @@ section h2.visible::after {
 
 .founder-decoration {
   position: absolute;
-  top: -20px;
-  left: -20px;
-  right: 20px;
-  bottom: 20px;
+  top: -10px;
+  left: -10px;
+  right: 10px;
+  bottom: 10px;
   background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
   border-radius: 20px;
   z-index: 1;
   opacity: 0.3;
+  max-width: 100%;
 }
 
 .founder-info-enhanced h3 {
