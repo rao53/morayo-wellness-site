@@ -2028,7 +2028,7 @@ section h2.visible::after {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 245, 255, 0.95) 100%);
     backdrop-filter: blur(15px);
     flex-direction: column;
-    padding: 1.5rem 1rem;
+    padding: 0;
     box-shadow: 0 4px 20px rgba(168, 85, 247, 0.15);
     z-index: 999;
     list-style: none;
@@ -2037,27 +2037,36 @@ section h2.visible::after {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
   }
   
   /* Show when menu is open */
   .nav-menu.nav-menu-open {
-    max-height: 400px; /* Enough for all menu items */
+    max-height: calc(100vh - 70px); /* Use viewport height minus navbar height */
     opacity: 1;
     padding: 1.5rem 1rem;
+    overflow-y: visible; /* Ensure content is not clipped */
   }
   
   .nav-menu li {
-    margin: 0.5rem 0;
+    margin: 0.25rem 0;
     display: block;
     width: 100%;
   }
   
+  .nav-menu li:first-child {
+    margin-top: 0;
+  }
+  
+  .nav-menu li:last-child {
+    margin-bottom: 0;
+  }
+  
   .nav-menu a {
     display: block;
-    padding: 0.75rem 1rem;
+    padding: 0.875rem 1rem;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     width: 100%;
     color: #2d3748;
     text-decoration: none;
