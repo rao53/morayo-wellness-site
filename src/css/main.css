@@ -4159,7 +4159,7 @@ section h2.visible::after {
 
 .challenge-grid-enhanced {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
@@ -4225,7 +4225,6 @@ section h2.visible::after {
   border-radius: 30px;
   text-align: center;
   transition: all 0.3s ease;
-  grid-column: span 2;
 }
 
 .featured-icon {
@@ -4476,7 +4475,7 @@ section h2.visible::after {
 
 .services-grid-small {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
@@ -4728,7 +4727,7 @@ section h2.visible::after {
 
 .why-grid-visual {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-bottom: 3rem;
 }
