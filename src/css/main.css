@@ -5708,6 +5708,16 @@ section h2.visible::after {
   border-radius: 25px;
 }
 
+/* Embedded Google Form Styling */
+.intake-form iframe {
+  width: 100%;
+  height: 1000px; /* tweak for desired length */
+  border: none;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08);
+}
+
 .form-type-selector {
   display: flex;
   gap: 2rem;
