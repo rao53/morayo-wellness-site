@@ -264,7 +264,7 @@
       <div class="contact-wrapper">
         <div class="contact-info-enhanced">
           <h3>Get in Touch</h3>
-          <p>Take the first step toward healing—reach out today.</p>
+                      <p>Take the first step toward healing, reach out today.</p>
           
           <div class="contact-details-grid">
             <div class="contact-detail glassmorphism">
@@ -307,86 +307,9 @@
         <div class="contact-form-enhanced">
           <h3>Intake Form</h3>
           <p>Fill out this form to begin your journey or inquire about partnership opportunities.</p>
-          
-          <form class="intake-form glassmorphism" x-data="{ formType: 'client' }">
-            <div class="form-type-selector">
-              <label>
-                <input type="radio" name="formType" value="client" x-model="formType">
-                <span>I need help</span>
-              </label>
-              <label>
-                <input type="radio" name="formType" value="partner" x-model="formType">
-                <span>I want to help</span>
-              </label>
-            </div>
-            
-            <div class="form-fields">
-              <div class="form-group">
-                <input type="text" placeholder="Your Name" required>
-                <i class="fas fa-user"></i>
-              </div>
-              
-              <div class="form-group">
-                <input type="email" placeholder="Your Email" required>
-                <i class="fas fa-envelope"></i>
-              </div>
-              
-              <div class="form-group">
-                <input type="tel" placeholder="Your Phone Number" required>
-                <i class="fas fa-phone"></i>
-              </div>
-              
-              <div class="form-group" x-show="formType === 'client'">
-                <select required>
-                  <option value="">Your Location (LGA)</option>
-                  <option value="agege">Agege</option>
-                  <option value="ikeja">Ikeja</option>
-                  <option value="other">Other (please specify in message)</option>
-                </select>
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              
-              <div class="form-group" x-show="formType === 'client'">
-                <select required>
-                  <option value="">Preferred Session Format</option>
-                  <option value="in-person">In-Person</option>
-                  <option value="video">Video Call</option>
-                </select>
-                <i class="fas fa-laptop-medical"></i>
-              </div>
-              
-              <div class="form-group" x-show="formType === 'partner'">
-                <select required>
-                  <option value="">How would you like to help?</option>
-                  <option value="therapist">Join as Therapist</option>
-                  <option value="volunteer">Volunteer</option>
-                  <option value="donate">Make a Donation</option>
-                  <option value="partner">Organization Partnership</option>
-                </select>
-                <i class="fas fa-handshake"></i>
-              </div>
-              
-              <div class="form-group full-width">
-                <textarea 
-                  x-bind:placeholder="formType === 'client' ? 'Tell us briefly about your situation and what kind of support you\'re looking for.' : 'Tell us about yourself and how you\'d like to contribute to our mission.'" 
-                  rows="5" 
-                  required></textarea>
-                <i class="fas fa-comment-alt"></i>
-              </div>
-              
-              <div class="form-group full-width">
-                <label class="checkbox-label">
-                  <input type="checkbox" required>
-                  <span>I understand that this information will be kept confidential and used only for matching me with appropriate services.</span>
-                </label>
-              </div>
-              
-              <button type="submit" class="btn btn-primary submit-btn">
-                <span x-text="formType === 'client' ? 'Submit Intake Form' : 'Submit Application'"></span>
-                <i class="fas fa-paper-plane"></i>
-              </button>
-            </div>
-          </form>
+          <div class="intake-form glassmorphism">
+            <iframe src="https://docs.google.com/forms/d/1GHQTBHKA7pNwU-WZZ38OTPcnD2Qgd7ByjaFAgWcDaeY/viewform?embedded=true" width="100%" height="1500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          </div>
         </div>
       </div>
     </div>
