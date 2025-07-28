@@ -4276,7 +4276,12 @@ section h2.visible::after {
 }
 
 .approach-supporting-grid {
-  display: contents;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.approach-featured-grid {
+  grid-template-columns: 1fr;
 }
 
 .approach-card {
