@@ -130,16 +130,21 @@
       
       <div class="resources-grid-enhanced">
         <!-- Educational Resources -->
-        <div class="resource-category-card glassmorphism" x-data="{ open: false }">
-          <div class="resource-header" @click="open = !open" :class="open ? 'active' : ''">
+        <div id="educational" class="resource-category-card glassmorphism" x-data="{ open: false }">
+          <div class="resource-header" role="button" tabindex="0" @click="open = !open" @keydown.enter.prevent="open = !open" @keydown.space.prevent="open = !open" :class="open ? 'active' : ''" :aria-expanded="open" aria-controls="educational-panel">
             <div class="resource-icon-wrapper">
               <i class="fas fa-book"></i>
             </div>
             <h3>Educational Resources</h3>
             <i class="fas fa-chevron-down expand-icon" :class="open ? 'rotate' : ''"></i>
           </div>
-          <div class="resource-content" x-show="open" x-transition>
+          <div id="educational-panel" class="resource-content" x-show="open" x-transition>
             <ul class="resource-list">
+              <li class="featured-resource">
+                <i class="fas fa-file-alt"></i>
+                <a aria-label="Therapy Access and Education Guide, opens in a new tab" href="https://docs.google.com/document/d/1D_0QYVOrM5hocqNumuOYyjHLhU6Y95d_gQkBCXaMMbo/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="resource-link">Therapy Access & Education Guide<i class="fa-solid fa-arrow-up-right-from-square external-icon" aria-hidden="true"></i></a>
+                <span class="badge badge-featured">Featured</span>
+              </li>
               <li>
                 <i class="fas fa-file-pdf"></i>
                 <span>Short guides on trauma, stigma, therapy options, etc.</span>
@@ -165,16 +170,26 @@
         </div>
 
         <!-- Self-Help Toolkit -->
-        <div class="resource-category-card glassmorphism" x-data="{ open: false }">
-          <div class="resource-header" @click="open = !open" :class="open ? 'active' : ''">
+        <div id="self-help" class="resource-category-card glassmorphism" x-data="{ open: false }">
+          <div class="resource-header" role="button" tabindex="0" @click="open = !open" @keydown.enter.prevent="open = !open" @keydown.space.prevent="open = !open" :class="open ? 'active' : ''" :aria-expanded="open" aria-controls="self-help-panel">
             <div class="resource-icon-wrapper">
               <i class="fas fa-toolbox"></i>
             </div>
             <h3>Self-Help Toolkit</h3>
             <i class="fas fa-chevron-down expand-icon" :class="open ? 'rotate' : ''"></i>
           </div>
-          <div class="resource-content" x-show="open" x-transition>
+          <div id="self-help-panel" class="resource-content" x-show="open" x-transition>
             <ul class="resource-list">
+              <li class="featured-resource">
+                <i class="fas fa-clipboard-check"></i>
+                <a aria-label="Self-Help Guide, opens in a new tab" href="https://docs.google.com/document/d/1mhCCl91j2QmeKqcr57apLw9MATu96RNFsphQHO5jCrs/edit?usp=drive_link" target="_blank" rel="noopener noreferrer" class="resource-link">Self‑Help Guide<i class="fa-solid fa-arrow-up-right-from-square external-icon" aria-hidden="true"></i></a>
+                <span class="badge badge-featured">Featured</span>
+              </li>
+              <li class="featured-resource">
+                <i class="fas fa-clipboard-check"></i>
+                <a aria-label="Self-Help Workbook, opens in a new tab" href="https://docs.google.com/document/d/1i3XVDujEak3gZu6oJ0FeDwoj13_8jaA_NXzrXhsuBBo/edit?usp=drive_link" target="_blank" rel="noopener noreferrer" class="resource-link">Self‑Help Workbook<i class="fa-solid fa-arrow-up-right-from-square external-icon" aria-hidden="true"></i></a>
+                <span class="badge badge-featured">Featured</span>
+              </li>
               <li>
                 <i class="fas fa-spa"></i>
                 <span>Grounding exercises</span>
@@ -441,5 +456,36 @@
   </footer>
 
   <script src="src/js/page-animations.js"></script>
+  <script>
+  (function() {
+    function openAccordionByHash() {
+      var hash = window.location.hash.replace('#', '');
+      if (!hash) return;
+      var card = document.getElementById(hash);
+      if (!card) return;
+      // Alpine's x-data has `open` state; toggle it open if present
+      try {
+        if (card.__x) {
+          // set reactive state directly
+          card.__x.$data.open = true;
+        } else {
+          // Fallback: add an `active` class for header and force content visible
+          var header = card.querySelector('.resource-header');
+          var content = card.querySelector('.resource-content');
+          if (header) header.classList.add('active');
+          if (content) content.style.display = 'block';
+        }
+        // Smooth scroll into view with offset for navbar
+        setTimeout(function(){
+          card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
+      } catch (e) {
+        // no-op
+      }
+    }
+    window.addEventListener('DOMContentLoaded', openAccordionByHash);
+    window.addEventListener('hashchange', openAccordionByHash);
+  })();
+  </script>
 </body>
 </html> 
