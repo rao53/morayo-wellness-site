@@ -12,14 +12,16 @@
 .poster-header {
   position: relative;
   border-radius: 14px;
-  padding: 18px 20px;
+  padding: 16px 20px;
   margin-bottom: 14px;
-  color: #0b1020;
-  background: linear-gradient(90deg, #f5f3ff 0%, #fde7f3 100%);
-  border: 1px solid rgba(168,85,247,.25);
+  color: #ffffff;
+  background: linear-gradient(90deg, #111827 0%, #374151 100%);
+  border: 1px solid rgba(255,255,255,.08);
 }
-.poster-header .title { font-size: 38px; line-height: 1.1; margin: 0; font-weight: 900; }
-.poster-header .subtitle { margin: 6px 0 0; color: #374151; font-weight: 600; font-size: 14px; }
+.poster-header .header-row { display: flex; align-items: center; gap: 10px; }
+.poster-header .logo { width: 28px; height: 28px; object-fit: contain; border-radius: 6px; background: #fff; padding: 2px; }
+.poster-header .title { font-size: 36px; line-height: 1.1; margin: 0; font-weight: 900; color: #fff; }
+.poster-header .subtitle { margin: 4px 0 0; color: #cbd5e1; font-weight: 600; font-size: 13px; }
 
 .poster-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .poster-tile {
@@ -80,9 +82,9 @@
 .band .item { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); border-radius: 10px; padding: 10px; }
 .band .item p { margin: 4px 0 0; font-size: 14px; line-height: 1.35; }
 
-.band-primary { background: linear-gradient(90deg, #4338ca, #7c3aed); }
-.band-secondary { background: linear-gradient(90deg, #6d28d9, #db2777); }
-.band-tertiary { background: linear-gradient(90deg, #0f766e, #16a34a); }
+.band-primary { background: linear-gradient(90deg, #1e3a8a, #2563eb); }
+.band-secondary { background: linear-gradient(90deg, #5b21b6, #7e22ce); }
+.band-tertiary { background: linear-gradient(90deg, #166534, #16a34a); }
 .band-dark { background: #111827; }
 
 .cta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 8px; }
