@@ -1,3 +1,90 @@
+/* Resource hub */
+.resources-hub .resource-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin: 1rem 0 2rem;
+}
+
+.resources-hub .search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  flex: 1 1 320px;
+}
+.resources-hub .search-box i { color: #6b21a8; }
+.resources-hub .search-box input {
+  border: none; outline: none; width: 100%; background: transparent; font-size: 1rem;
+}
+
+.filter-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.chip {
+  padding: 0.5rem 0.75rem; border-radius: 9999px; border: 1px solid rgba(168,85,247,.25); background: #fff; color: #6b21a8; cursor: pointer;
+}
+.chip.active { background: #f5f3ff; border-color: #e9d5ff; }
+.chip { min-height: 36px; }
+
+.resource-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
+.resource-card {
+  padding: 1.25rem; border-radius: 16px; display: flex; flex-direction: column; gap: 0.5rem;
+}
+.resource-card.critical { border: 2px solid rgba(239,68,68,.15); }
+.resource-card .card-icon { font-size: 1.5rem; color: #a855f7; }
+.resource-card .card-title { margin: 0.25rem 0 0; font-size: 1.125rem; }
+.resource-card .card-subtitle { color: #6b7280; margin: 0; }
+.resource-card .card-meta { font-size: .9rem; color: #6b7280; display: flex; gap: .75rem; }
+.resource-card .card-snippet { color: #4b5563; }
+.resource-card .card-actions { display: flex; gap: .5rem; margin-top: .25rem; }
+.icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 9999px; border: 1px solid rgba(168,85,247,.25); color: #6b21a8; background: #fff; }
+.icon-btn[aria-disabled="true"] { opacity: .6; cursor: not-allowed; }
+.icon-btn.small { width: 32px; height: 32px; }
+.resource-card[role="button"] { cursor: pointer; }
+.resource-card[role="button"]:hover { background: rgba(168,85,247,.04); }
+
+/* Interactive facts rotator */
+.resource-card.interactive .facts-rotator { display: grid; gap: .5rem; }
+.resource-card.interactive .fact-text { margin: 0; color: #374151; min-height: 2.25rem; }
+.resource-card.interactive .fact-controls { display: flex; align-items: center; justify-content: center; gap: .5rem; }
+.resource-card.interactive .dots { display: flex; gap: .25rem; }
+.resource-card.interactive .dots::before { content: '• • •'; color: #a855f7; letter-spacing: .25rem; }
+.resource-card .card-list { margin: .25rem 0 0; padding-left: 1.25rem; color: #374151; }
+.resource-card .card-list li { margin: .25rem 0; }
+
+/* Mobile refinements */
+@media (max-width: 480px) {
+  .resource-grid { grid-template-columns: 1fr; }
+  .resources-hub .search-box { flex: 1 1 100%; }
+  .resource-card .card-actions { flex-direction: column; }
+  .resource-card .card-actions .btn { width: 100%; text-align: center; }
+}
+
+/* Sources block */
+.sources-block { margin-top: 2rem; padding: 1rem; border-radius: 12px; }
+.sources-block summary { list-style: none; cursor: pointer; }
+.sources-block summary::-webkit-details-marker { display: none; }
+.sources-block .summary-title { display: inline-flex; align-items: center; gap: .5rem; font-weight: 600; }
+.sources-content { margin-top: .75rem; color: #374151; }
+.sources-list { margin: .5rem 0 0 1rem; padding-left: 1rem; }
+.sources-list li { margin: .25rem 0; }
+
+/* Modal */
+.modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,.4); z-index: 60; padding: 1rem; }
+.modal.open { display: flex; }
+.modal .modal-content { background: #fff; max-width: 720px; width: 100%; border-radius: 16px; padding: 1rem 1rem .75rem; max-height: 90vh; overflow: auto; }
+.modal .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .25rem; }
+.modal .modal-body { color: #374151; display: grid; gap: .35rem; }
+.modal .modal-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; padding: .25rem .5rem; }
+
+/* Tighter typography in modal */
+.modal .modal-header h3 { font-size: 1.5rem; line-height: 1.25; margin: 0; }
+.modal .modal-body p { margin: 0; line-height: 1.5; }
+.modal .modal-body strong { color: #111827; }
+.modal .modal-body ul { margin: .25rem 0 0 .25rem; padding-left: 1rem; }
+.modal .modal-body li { margin: .15rem 0; }
+.modal .card-actions { margin-top: .5rem !important; }
 /* Accessibility helpers */
 .visually-hidden {
   position: absolute !important;
@@ -5149,8 +5236,8 @@ section h2.visible::after {
   margin: 0 auto 1.5rem;
   display: block;
   text-align: left;
-  width: 85%;
-  max-width: 280px;
+  width: 100%;
+  max-width: none;
 }
 
 .resource-list li {
@@ -5182,9 +5269,9 @@ section h2.visible::after {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin: auto auto 0;
-  width: 85%;
-  max-width: 280px;
+  margin: 1rem 0 0;
+  width: 100%;
+  max-width: none;
   text-align: center;
 }
 

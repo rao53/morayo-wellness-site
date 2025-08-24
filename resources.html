@@ -120,184 +120,334 @@
     </div>
   </section>
 
-  <!-- Resources & Self-Help Section -->
-  <section class="resources-section enhanced">
+  <!-- Resources Hub -->
+  <section class="resources-hub">
     <div class="container">
       <h2 class="section-title">
-        <span class="title-highlight">Resources & Self-Help</span>
+        <span class="title-highlight">Educational Resources</span>
       </h2>
-      <p class="section-subtitle">All our resources are free to download, evidence-based, and designed for Nigerian women and girls.</p>
-      
-      <div class="resources-grid-enhanced">
-        <!-- Educational Resources -->
-        <div id="educational" class="resource-category-card glassmorphism" x-data="{ open: false }">
-          <div class="resource-header" role="button" tabindex="0" @click="open = !open" @keydown.enter.prevent="open = !open" @keydown.space.prevent="open = !open" :class="open ? 'active' : ''" :aria-expanded="open" aria-controls="educational-panel">
-            <div class="resource-icon-wrapper">
-              <i class="fas fa-book"></i>
-            </div>
-            <h3>Educational Resources</h3>
-            <i class="fas fa-chevron-down expand-icon" :class="open ? 'rotate' : ''"></i>
-          </div>
-          <div id="educational-panel" class="resource-content" x-show="open" x-transition>
-            <ul class="resource-list">
-              <li class="featured-resource">
-                <i class="fas fa-file-alt"></i>
-                <a aria-label="Therapy Access and Education Guide, opens in a new tab" href="https://docs.google.com/document/d/1D_0QYVOrM5hocqNumuOYyjHLhU6Y95d_gQkBCXaMMbo/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="resource-link">Therapy Access & Education Guide<i class="fa-solid fa-arrow-up-right-from-square external-icon" aria-hidden="true"></i></a>
-                <span class="badge badge-featured">Featured</span>
-              </li>
-              <li>
-                <i class="fas fa-file-pdf"></i>
-                <span>Short guides on trauma, stigma, therapy options, etc.</span>
-              </li>
-              <li>
-                <i class="fas fa-file-alt"></i>
-                <span>Fact sheets about teletherapy</span>
-              </li>
-              <li>
-                <i class="fas fa-lightbulb"></i>
-                <span>"Did You Know?" highlights</span>
-              </li>
-              <li>
-                <i class="fas fa-link"></i>
-                <span>Links to helplines or partner organizations</span>
-              </li>
-            </ul>
-            <div class="coming-soon-note glassmorphism">
-              <i class="fas fa-hourglass-half"></i>
-              <p>Full library coming soon! Check back for downloadable materials.</p>
-            </div>
-          </div>
-        </div>
+      <p class="section-subtitle">Browse articles, guides, and downloads designed for Nigerian women and girls.</p>
 
-        <!-- Self-Help Toolkit -->
-        <div id="self-help" class="resource-category-card glassmorphism" x-data="{ open: false }">
-          <div class="resource-header" role="button" tabindex="0" @click="open = !open" @keydown.enter.prevent="open = !open" @keydown.space.prevent="open = !open" :class="open ? 'active' : ''" :aria-expanded="open" aria-controls="self-help-panel">
-            <div class="resource-icon-wrapper">
-              <i class="fas fa-toolbox"></i>
-            </div>
-            <h3>Self-Help Toolkit</h3>
-            <i class="fas fa-chevron-down expand-icon" :class="open ? 'rotate' : ''"></i>
-          </div>
-          <div id="self-help-panel" class="resource-content" x-show="open" x-transition>
-            <ul class="resource-list">
-              <li class="featured-resource">
-                <i class="fas fa-clipboard-check"></i>
-                <a aria-label="Self-Help Guide, opens in a new tab" href="https://docs.google.com/document/d/1mhCCl91j2QmeKqcr57apLw9MATu96RNFsphQHO5jCrs/edit?usp=drive_link" target="_blank" rel="noopener noreferrer" class="resource-link">Self‑Help Guide<i class="fa-solid fa-arrow-up-right-from-square external-icon" aria-hidden="true"></i></a>
-                <span class="badge badge-featured">Featured</span>
-              </li>
-              <li class="featured-resource">
-                <i class="fas fa-clipboard-check"></i>
-                <a aria-label="Self-Help Workbook, opens in a new tab" href="https://docs.google.com/document/d/1i3XVDujEak3gZu6oJ0FeDwoj13_8jaA_NXzrXhsuBBo/edit?usp=drive_link" target="_blank" rel="noopener noreferrer" class="resource-link">Self‑Help Workbook<i class="fa-solid fa-arrow-up-right-from-square external-icon" aria-hidden="true"></i></a>
-                <span class="badge badge-featured">Featured</span>
-              </li>
-              <li>
-                <i class="fas fa-spa"></i>
-                <span>Grounding exercises</span>
-              </li>
-              <li>
-                <i class="fas fa-wind"></i>
-                <span>Breathing practices</span>
-              </li>
-              <li>
-                <i class="fas fa-pen"></i>
-                <span>Journal prompts</span>
-              </li>
-              <li>
-                <i class="fas fa-clipboard-check"></i>
-                <span>How to prepare for your first therapy session</span>
-              </li>
-              <li>
-                <i class="fas fa-download"></i>
-                <span>Downloadable Mental Wellness Starter Guide (PDF)</span>
-              </li>
-            </ul>
-            <div class="download-preview glassmorphism">
-              <i class="fas fa-file-download"></i>
-              <p>Download options will be available soon</p>
-            </div>
-          </div>
+      <div class="resource-controls">
+        <div class="search-box glassmorphism">
+          <i class="fas fa-search"></i>
+          <input id="resourceSearch" type="search" placeholder="Search topics, e.g., trauma, coping, therapy" aria-label="Search resources">
         </div>
-
-        <!-- Crisis Support -->
-        <div class="resource-category-card glassmorphism crisis-support" x-data="{ open: true }">
-          <div class="resource-header" @click="open = !open" :class="open ? 'active' : ''">
-            <div class="resource-icon-wrapper">
-              <i class="fas fa-phone-alt"></i>
-            </div>
-            <h3>Crisis Support</h3>
-            <i class="fas fa-chevron-down expand-icon" :class="open ? 'rotate' : ''"></i>
-          </div>
-          <div class="resource-content" x-show="open" x-transition>
-            <div class="crisis-info">
-              <p class="crisis-note">If you're in immediate danger, please contact:</p>
-              <ul class="crisis-contacts">
-                <li>
-                  <i class="fas fa-phone"></i>
-                  <span>Emergency Services: 112</span>
-                </li>
-                <li>
-                  <i class="fas fa-shield-alt"></i>
-                  <span>Local Police Emergency Line</span>
-                </li>
-                <li>
-                  <i class="fas fa-hands-helping"></i>
-                  <span>Partner Crisis Centers (Coming Soon)</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+        <div class="filter-chips" role="tablist" aria-label="Filter resources by category">
+          <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="chip" data-filter="trauma" role="tab">Trauma & Recovery</button>
+          <button class="chip" data-filter="stigma" role="tab">Stigma & Myths</button>
+          <button class="chip" data-filter="therapy" role="tab">Therapy Options</button>
+          <button class="chip" data-filter="teletherapy" role="tab">Teletherapy</button>
+          <button class="chip" data-filter="grief" role="tab">Grief & Postpartum</button>
+          <button class="chip" data-filter="self-care" role="tab">Self‑Care</button>
+          <button class="chip" data-filter="highlights" role="tab">Highlights</button>
+          <button class="chip" data-filter="education" role="tab">Education</button>
+          <button class="chip" data-filter="crisis" role="tab">Crisis</button>
         </div>
       </div>
 
-      <!-- Visual Resource Hub -->
-      <div class="resource-hub-visual">
-        <h3>How Our Resources Help</h3>
-        <div class="resource-journey">
-          <div class="journey-step">
-            <div class="step-icon glassmorphism">
-              <i class="fas fa-book-reader"></i>
+      <div class="resource-grid">
+        <!-- Trauma & Recovery Card -->
+        <article class="resource-card glassmorphism" data-category="trauma" data-tags="trauma recovery nigeria coping therapy" role="button" tabindex="0" data-modal-target="#modal-trauma">
+          <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+          <h3 class="card-title">Trauma & Recovery</h3>
+          <p class="card-subtitle">Healing from Trauma: What You Should Know</p>
+          <p class="card-snippet">What is trauma, normal reactions, why it matters in Nigeria, cultural coping tips, and when to seek help.</p>
+          <div class="card-actions">
+            <a class="icon-btn" href="#" aria-disabled="true" title="Download PDF (soon)"><i class="fas fa-file-arrow-down"></i></a>
+          </div>
+        </article>
+
+        <!-- Grief & Postpartum Card -->
+        <article class="resource-card glassmorphism" data-category="grief" data-tags="grief loss miscarriage postpartum depression support nigeria" role="button" tabindex="0" data-modal-target="#modal-grief">
+          <div class="card-thumb"><img src="src/images/brand/website_logo.png" alt="Grief & Postpartum"></div>
+          <div class="card-icon"><i class="fas fa-ribbon"></i></div>
+          <h3 class="card-title">Grief & Postpartum Mental Health</h3>
+          <p class="card-subtitle">Coping with Grief; After Baby: Taking Care of Your Mental Health</p>
+          <p class="card-snippet">Grief after loss is natural. Postpartum changes are common. Learn what helps and when to reach out.</p>
+          <div class="card-actions">
+            <a class="icon-btn" href="#" aria-disabled="true" title="Download PDF (soon)"><i class="fas fa-file-arrow-down"></i></a>
+          </div>
+        </article>
+
+        <!-- Stigma & Myths Card -->
+        <article class="resource-card glassmorphism" data-category="stigma" data-tags="stigma myths truth mental health nigeria support" role="button" tabindex="0" data-modal-target="#modal-stigma">
+          <div class="card-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h3 class="card-title">Stigma & Myths</h3>
+          <p class="card-subtitle">The Truth About Mental Health</p>
+          <p class="card-snippet">Quick facts to counter common myths, plus simple ways to support others with compassion.</p>
+          <div class="card-actions">
+            <a class="icon-btn" href="#" aria-disabled="true" title="Download PDF (soon)"><i class="fas fa-file-arrow-down"></i></a>
+          </div>
+        </article>
+
+        <!-- Therapy Options Card -->
+        <article class="resource-card glassmorphism" data-category="therapy" data-tags="therapy options cbt group faith confidentiality session nigeria" role="button" tabindex="0" data-modal-target="#modal-therapy">
+          <div class="card-icon"><i class="fas fa-user-md"></i></div>
+          <h3 class="card-title">Therapy Options</h3>
+          <p class="card-subtitle">What Is Therapy? And How Can It Help Me?</p>
+          <p class="card-snippet">Types of therapy, what to expect in sessions, and why consistent care strengthens mental health.</p>
+          <div class="card-actions">
+            <a class="icon-btn" href="#" aria-disabled="true" title="Download PDF (soon)"><i class="fas fa-file-arrow-down"></i></a>
+          </div>
+        </article>
+
+        <!-- Teletherapy Facts Card -->
+        <article class="resource-card glassmorphism" data-category="teletherapy" data-tags="teletherapy online counseling phone video privacy reminders nigeria" role="button" tabindex="0" data-modal-target="#modal-tele">
+          <div class="card-icon"><i class="fas fa-video"></i></div>
+          <h3 class="card-title">Teletherapy Facts</h3>
+          <p class="card-subtitle">Online Counseling: Your Healing, Your Way</p>
+          <p class="card-snippet">What teletherapy is, why it helps, real benefits for women in Nigeria, and simple tips to get started.</p>
+          <div class="card-actions">
+            <a class="icon-btn" href="#" aria-disabled="true" title="Download PDF (soon)"><i class="fas fa-file-arrow-down"></i></a>
+          </div>
+        </article>
+
+        <!-- Self‑Care & Support Networks Card -->
+        <article class="resource-card glassmorphism" data-category="self-care" data-tags="self care sleep nutrition water movement support network" role="button" tabindex="0" data-modal-target="#modal-selfcare">
+          <div class="card-thumb"><img src="src/images/brand/website_logo.png" alt="Self‑Care & Support"></div>
+          <div class="card-icon"><i class="fas fa-hands-helping"></i></div>
+          <h3 class="card-title">Self‑Care 101 & Support Networks</h3>
+          <p class="card-subtitle">Your Care Kit</p>
+          <p class="card-snippet">Small daily actions reduce stress. Build a circle of safe people and simple routines.</p>
+          <div class="card-actions">
+            <a class="icon-btn" href="#" aria-disabled="true" title="Download PDF (soon)"><i class="fas fa-file-arrow-down"></i></a>
+          </div>
+        </article>
+
+        <!-- Did You Know? Highlights (interactive) -->
+        <article class="resource-card glassmorphism interactive" data-category="highlights" data-tags="facts nigeria statistics violence breathing journaling talking helps">
+          <div class="card-thumb banner"><img src="src/images/brand/website_logo.png" alt="Mental Health Facts"></div>
+          <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3 class="card-title">Did You Know? Highlights</h3>
+          <div class="facts-rotator" aria-live="polite">
+            <ul class="facts-list" hidden>
+              <li>🧠 1 in 4 Nigerians will face mental health issues (According to WHO).</li>
+              <li>⛔ Research shows less than 10% receive professional help.</li>
+              <li>💔 33% of Nigerian women have experienced violence, increasing trauma risk.</li>
+              <li>💡 Breathing and journaling can reduce trauma and anxiety.</li>
+              <li>❤️ Talking helps — even for 15 minutes a week.</li>
+            </ul>
+            <p class="fact-text"></p>
+            <div class="fact-controls">
+              <button class="icon-btn small" type="button" data-prev aria-label="Previous fact"><i class="fas fa-chevron-left"></i></button>
+              <div class="dots" aria-hidden="true"></div>
+              <button class="icon-btn small" type="button" data-next aria-label="Next fact"><i class="fas fa-chevron-right"></i></button>
             </div>
-            <h4>Learn</h4>
-            <p>Understand trauma and healing</p>
           </div>
-          <div class="journey-connector">
-            <svg width="100" height="2">
-              <line x1="0" y1="1" x2="100" y2="1" stroke="url(#resourceGradient)" stroke-width="2" stroke-dasharray="5,5">
-                <animate attributeName="stroke-dashoffset" values="10;0" dur="2s" repeatCount="indefinite"/>
-              </line>
-              <defs>
-                <linearGradient id="resourceGradient">
-                  <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
-                  <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
-                </linearGradient>
-              </defs>
-            </svg>
+        </article>
+
+        <!-- Education Card -->
+        <article class="resource-card glassmorphism" data-category="education" data-tags="education therapy access teletherapy stigma">
+          <div class="card-icon"><i class="fas fa-book"></i></div>
+          <h3 class="card-title">Therapy Access & Education</h3>
+          <p class="card-subtitle">Facts, options, and how to get started</p>
+          <div class="card-meta">
+            <span class="meta-item"><i class="fas fa-file"></i> Google Doc</span>
           </div>
-          <div class="journey-step">
-            <div class="step-icon glassmorphism">
-              <i class="fas fa-tools"></i>
-            </div>
-            <h4>Practice</h4>
-            <p>Use self-help techniques</p>
+          <div class="card-actions">
+            <a class="btn btn-outline" href="https://docs.google.com/document/d/1D_0QYVOrM5hocqNumuOYyjHLhU6Y95d_gQkBCXaMMbo/edit?usp=sharing" target="_blank" rel="noopener">Read</a>
           </div>
-          <div class="journey-connector">
-            <svg width="100" height="2">
-              <line x1="0" y1="1" x2="100" y2="1" stroke="url(#resourceGradient)" stroke-width="2" stroke-dasharray="5,5">
-                <animate attributeName="stroke-dashoffset" values="10;0" dur="2s" repeatCount="indefinite"/>
-              </line>
-            </svg>
-          </div>
-          <div class="journey-step">
-            <div class="step-icon glassmorphism">
-              <i class="fas fa-heart"></i>
-            </div>
-            <h4>Heal</h4>
-            <p>Begin your wellness journey</p>
-          </div>
-        </div>
+        </article>
+
+        <!-- Crisis Support Card -->
+        <article class="resource-card glassmorphism critical" data-category="crisis" data-tags="crisis emergency help line">
+          <div class="card-icon"><i class="fas fa-phone-alt"></i></div>
+          <h3 class="card-title">Crisis Support</h3>
+          <p class="card-subtitle">In immediate danger? Please contact:</p>
+          <ul class="card-list">
+            <li><i class="fas fa-phone"></i> Emergency Services: 112</li>
+            <li><i class="fas fa-shield-alt"></i> Local Police Emergency Line</li>
+          </ul>
+        </article>
       </div>
+
+      <!-- Sources We Use -->
+      <details class="sources-block glassmorphism">
+        <summary>
+          <span class="summary-title"><i class="fas fa-book-open"></i> Sources We Use</span>
+        </summary>
+        <div class="sources-content">
+          <p>This toolkit is based on research from global health organizations, peer‑reviewed journals, and studies relevant to women’s mental health in Nigeria.</p>
+          <ul class="sources-list">
+            <li><strong>World Health Organization (WHO)</strong> – Mental Health Gap Action Programme (mhGAP), WHO‑AIMS Nigeria Report (2006), WHO Depression Fact Sheets</li>
+            <li><strong>Justice.gov & UNODC</strong> – Nigeria mental health treatment gap & stigma surveys</li>
+            <li><strong>Kohrt, B. et al.</strong> (2014 & 2018) – Cultural adaptation of mental health interventions in LMICs</li>
+            <li><strong>Chipps et al.</strong> (2012) – Telepsychiatry in Africa</li>
+            <li><strong>Oladeji et al.</strong> (2020) – Feasibility of teletherapy and task‑shifting in Nigeria</li>
+            <li><strong>Smyth & Pennebaker</strong> (2008) – Expressive writing for trauma</li>
+            <li><strong>O’Hara & McCabe</strong> (2013) – Postpartum depression prevalence</li>
+            <li><strong>Thornicroft, G. et al.</strong> (2016) – Global mental health stigma research</li>
+            <li><strong>Abbo, C.</strong> (2008) – Beliefs about mental illness in sub‑Saharan Africa</li>
+            <li><strong>Neimeyer, R.</strong> (2006) – Meaning reconstruction and grief</li>
+            <li><strong>Harvard Health Publishing</strong> (2019) – Sleep, nutrition, and mood</li>
+            <li><strong>Hofmann et al.</strong> (2012), <strong>Cuijpers et al.</strong> (2016) – CBT for anxiety, depression, and PTSD</li>
+            <li><strong>Nature Human Behaviour</strong> (2021) – Breathing exercises and trauma recovery</li>
+            <li><strong>Berkman et al.</strong> (2000), <strong>Hobfoll et al.</strong> (2007) – Social support in mental health recovery</li>
+            <li><strong>Nigerian Demographic Health Survey</strong> & <strong>UN Women</strong> – Gender‑based violence statistics</li>
+          </ul>
+        </div>
+      </details>
     </div>
   </section>
+
+  <!-- Trauma & Recovery Modal -->
+  <div class="modal" id="modal-trauma" aria-hidden="true" role="dialog" aria-labelledby="modal-trauma-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-trauma-title">Healing from Trauma: What You Should Know</h3>
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>What is Trauma?</strong> Emotional pain after frightening, violent, or overwhelming events. Experts note it can come from abuse, accidents, loss, or witnessing violence.</p>
+        <p><strong>Normal Reactions</strong>: Nightmares, sadness, anger, fear, guilt. These are common responses—not signs of weakness.</p>
+        <p><strong>Why it matters in Nigeria</strong>: High rates of violence mean many people experience these symptoms.</p>
+        <p><strong>Cultural Coping Tips</strong>: Talk to a trusted elder or spiritual advisor; pray or use faith-based groups; confide in a trusted friend; try journaling or expressive writing.</p>
+        <p><strong>When to Seek Help</strong>: If feelings don’t improve after several weeks, therapy helps. Many people feel better within weeks of starting.</p>
+      </div>
+      <div class="card-actions" style="margin-top:.75rem;">
+        <a class="btn btn-primary" href="#" aria-disabled="true">Download PDF (soon)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stigma & Myths Modal -->
+  <div class="modal" id="modal-stigma" aria-hidden="true" role="dialog" aria-labelledby="modal-stigma-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-stigma-title">The Truth About Mental Health</h3>
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Quick Facts</strong></p>
+        <ul>
+          <li>Mental illness is not a curse or punishment.</li>
+          <li>Many people believe harmful myths; you are not alone if you’ve heard them.</li>
+          <li>Depression and anxiety are brain‑based conditions—not weakness.</li>
+          <li>Brain health matters. You deserve care, not shame.</li>
+          <li>Stigma stops people from seeking help, but support works.</li>
+        </ul>
+        <p><strong>How to Support Others</strong></p>
+        <ul>
+          <li>Listen without blaming.</li>
+          <li>Avoid “just be strong.” Try “I’m here with you.”</li>
+          <li>Remind them that healing takes time and courage.</li>
+        </ul>
+      </div>
+      <div class="card-actions" style="margin-top:.75rem;">
+        <a class="btn btn-primary" href="#" aria-disabled="true">Download PDF (soon)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Therapy Options Modal -->
+  <div class="modal" id="modal-therapy" aria-hidden="true" role="dialog" aria-labelledby="modal-therapy-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-therapy-title">What Is Therapy? And How Can It Help Me?</h3>
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Research shows therapy can reduce anxiety, PTSD, and depression—especially trauma‑focused approaches.</p>
+        <p><strong>Types</strong>: Individual, Group, Trauma‑focused CBT, Faith‑based therapy.</p>
+        <p><strong>In a session</strong>: You talk; the therapist listens without judgment. Sessions are confidential.</p>
+        <p><strong>Evidence</strong>: CBT helps reduce PTSD and anxiety in survivors.</p>
+        <p><strong>Simple Analogy</strong>: Therapy is like going to the gym—for your mind. Consistency builds strength.</p>
+        <p><em>At Morayo, we help cover costs for women who need therapy. Healing should not depend on money.</em></p>
+      </div>
+      <div class="card-actions" style="margin-top:.75rem;">
+        <a class="btn btn-primary" href="#" aria-disabled="true">Download PDF (soon)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Teletherapy Facts Modal -->
+  <div class="modal" id="modal-tele" aria-hidden="true" role="dialog" aria-labelledby="modal-tele-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-tele-title">Online Counseling: Your Healing, Your Way</h3>
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>What It Is</strong>: Talk to a counselor by phone or video. This can make therapy more private and accessible.</p>
+        <p>Teletherapy has been shown to improve attendance and outcomes, especially where providers are limited.</p>
+        <p><strong>Why It Helps</strong></p>
+        <ul>
+          <li>More private: no travel, less judgment.</li>
+          <li>Flexible: talk when you’re ready.</li>
+          <li>Helps more women start and continue healing.</li>
+        </ul>
+        <p><strong>Tips</strong></p>
+        <ul>
+          <li>Find a quiet space.</li>
+          <li>Ensure airtime or internet.</li>
+          <li>Set reminders on your phone.</li>
+          <li>If needed, Morayo can assist with data or airtime.</li>
+        </ul>
+      </div>
+      <div class="card-actions" style="margin-top:.75rem;">
+        <a class="btn btn-primary" href="#" aria-disabled="true">Download PDF (soon)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grief & Postpartum Modal -->
+  <div class="modal" id="modal-grief" aria-hidden="true" role="dialog" aria-labelledby="modal-grief-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-grief-title">Grief & Postpartum Mental Health</h3>
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Coping with Grief</strong></p>
+        <ul>
+          <li>Grief is a natural response to loss (after abuse, miscarriage, death, divorce, etc.).</li>
+          <li>Healing is supported by talking, resting, and remembering.</li>
+          <li>Talk about the person or event. Light a candle or plant something to remember them.</li>
+          <li>Rest, eat, and allow yourself to cry.</li>
+        </ul>
+        <p><strong>After Baby: Taking Care of Your Mental Health</strong></p>
+        <ul>
+          <li>About 1 in 5 new mothers feel sad, anxious, or disconnected (postpartum depression). It’s not your fault.</li>
+          <li>Get support early. Talking helps. Therapy helps. You’re not alone.</li>
+          <li>Look for signs: feeling hopeless, not bonding with baby, low energy.</li>
+          <li>Morayo can connect you to care.</li>
+        </ul>
+      </div>
+      <div class="card-actions" style="margin-top:.75rem;">
+        <a class="btn btn-primary" href="#" aria-disabled="true">Download PDF (soon)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Self‑Care & Support Networks Modal -->
+  <div class="modal" id="modal-selfcare" aria-hidden="true" role="dialog" aria-labelledby="modal-selfcare-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-selfcare-title">Your Care Kit</h3>
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Self‑Care Tips</strong></p>
+        <ul>
+          <li>Sleep 6–8 hours when possible.</li>
+          <li>Eat well and drink water.</li>
+          <li>Move your body with gentle walking or dancing.</li>
+          <li>Talk to one friend each week.</li>
+        </ul>
+        <p><strong>Support Network Tips</strong></p>
+        <ul>
+          <li>List your safe people—who can you call or message?</li>
+          <li>Join a local women’s group or prayer group.</li>
+          <li>Keep a journal of support moments (kind words, practical help).</li>
+        </ul>
+      </div>
+      <div class="card-actions" style="margin-top:.75rem;">
+        <a class="btn btn-primary" href="#" aria-disabled="true">Download PDF (soon)</a>
+      </div>
+    </div>
+  </div>
 
   <!-- FAQ Section -->
   <section id="faq" class="faq-section enhanced">
@@ -456,36 +606,6 @@
   </footer>
 
   <script src="src/js/page-animations.js"></script>
-  <script>
-  (function() {
-    function openAccordionByHash() {
-      var hash = window.location.hash.replace('#', '');
-      if (!hash) return;
-      var card = document.getElementById(hash);
-      if (!card) return;
-      // Alpine's x-data has `open` state; toggle it open if present
-      try {
-        if (card.__x) {
-          // set reactive state directly
-          card.__x.$data.open = true;
-        } else {
-          // Fallback: add an `active` class for header and force content visible
-          var header = card.querySelector('.resource-header');
-          var content = card.querySelector('.resource-content');
-          if (header) header.classList.add('active');
-          if (content) content.style.display = 'block';
-        }
-        // Smooth scroll into view with offset for navbar
-        setTimeout(function(){
-          card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 50);
-      } catch (e) {
-        // no-op
-      }
-    }
-    window.addEventListener('DOMContentLoaded', openAccordionByHash);
-    window.addEventListener('hashchange', openAccordionByHash);
-  })();
-  </script>
+  <script src="src/js/resources.js"></script>
 </body>
 </html> 
