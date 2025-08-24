@@ -26,6 +26,19 @@
       searchInput.addEventListener('input', function() { applyFilters(); });
     }
 
+    // Preselect filter via URL ?topic=
+    (function presetFromURL(){
+      var params = new URLSearchParams(window.location.search);
+      var topic = params.get('topic');
+      if (!topic) return;
+      var targetChip = chips.find(function(c){ return c.getAttribute('data-filter') === topic; });
+      if (targetChip) {
+        chips.forEach(function(c){ c.classList.remove('active'); c.setAttribute('aria-selected', 'false'); });
+        targetChip.classList.add('active');
+        targetChip.setAttribute('aria-selected', 'true');
+      }
+    })();
+
     chips.forEach(function(chip) {
       chip.addEventListener('click', function() {
         chips.forEach(function(c){ c.classList.remove('active'); c.setAttribute('aria-selected', 'false'); });
@@ -62,19 +75,7 @@
     });
 
     // Simple facts rotator for the interactive highlights card
-    var factsRoot = document.querySelector('.resource-card.interactive .facts-rotator');
-    if (factsRoot) {
-      var facts = Array.prototype.slice.call(factsRoot.querySelectorAll('.facts-list li')).map(function(li){ return li.textContent; });
-      var factText = factsRoot.querySelector('.fact-text');
-      var prevBtn = factsRoot.querySelector('[data-prev]');
-      var nextBtn = factsRoot.querySelector('[data-next]');
-      var idx = 0;
-      function render() { if (factText && facts.length) factText.textContent = facts[idx]; }
-      function inc(n) { idx = (idx + n + facts.length) % facts.length; render(); }
-      if (prevBtn) prevBtn.addEventListener('click', function(){ inc(-1); });
-      if (nextBtn) nextBtn.addEventListener('click', function(){ inc(1); });
-      render();
-    }
+    // old rotator removed for infographic layout
 
     applyFilters();
   });

@@ -141,11 +141,46 @@
           <button class="chip" data-filter="teletherapy" role="tab">Teletherapy</button>
           <button class="chip" data-filter="grief" role="tab">Grief & Postpartum</button>
           <button class="chip" data-filter="self-care" role="tab">Self‑Care</button>
-          <button class="chip" data-filter="highlights" role="tab">Highlights</button>
-          <button class="chip" data-filter="education" role="tab">Education</button>
-          <button class="chip" data-filter="crisis" role="tab">Crisis</button>
         </div>
       </div>
+
+      <!-- Did You Know? Banner -->
+      <section class="highlights-section glassmorphism" aria-labelledby="did-you-know-title">
+        <div class="highlights-header">
+          <div class="hl-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3 id="did-you-know-title" class="hl-title">Did You Know? Mental Health in Nigeria</h3>
+        </div>
+        <div class="infographic">
+          <div class="info-tile">
+            <div class="tile-icon">🧠</div>
+            <div class="stat">1 in 4</div>
+            <div class="label">Nigerians will face a mental health issue (WHO)</div>
+          </div>
+          <div class="info-tile">
+            <div class="tile-icon">⛔</div>
+            <div class="stat">&lt; 10%</div>
+            <div class="label">receive professional help</div>
+          </div>
+          <div class="info-tile">
+            <div class="tile-icon">💔</div>
+            <div class="stat">33%</div>
+            <div class="label">of Nigerian women report violence → higher trauma risk</div>
+          </div>
+          <div class="info-tile">
+            <div class="tile-icon">💡</div>
+            <div class="stat">Proven</div>
+            <div class="label">Breathing & journaling reduce anxiety</div>
+          </div>
+          <div class="info-tile">
+            <div class="tile-icon">❤️</div>
+            <div class="stat">15 min</div>
+            <div class="label">of supportive talk weekly helps</div>
+          </div>
+        </div>
+        <div class="infographic-actions">
+          <a class="btn btn-outline" href="#" aria-disabled="true">Download Poster (soon)</a>
+        </div>
+      </section>
 
       <div class="resource-grid">
         <!-- Trauma & Recovery Card -->
@@ -161,7 +196,6 @@
 
         <!-- Grief & Postpartum Card -->
         <article class="resource-card glassmorphism" data-category="grief" data-tags="grief loss miscarriage postpartum depression support nigeria" role="button" tabindex="0" data-modal-target="#modal-grief">
-          <div class="card-thumb"><img src="src/images/brand/website_logo.png" alt="Grief & Postpartum"></div>
           <div class="card-icon"><i class="fas fa-ribbon"></i></div>
           <h3 class="card-title">Grief & Postpartum Mental Health</h3>
           <p class="card-subtitle">Coping with Grief; After Baby: Taking Care of Your Mental Health</p>
@@ -206,7 +240,6 @@
 
         <!-- Self‑Care & Support Networks Card -->
         <article class="resource-card glassmorphism" data-category="self-care" data-tags="self care sleep nutrition water movement support network" role="button" tabindex="0" data-modal-target="#modal-selfcare">
-          <div class="card-thumb"><img src="src/images/brand/website_logo.png" alt="Self‑Care & Support"></div>
           <div class="card-icon"><i class="fas fa-hands-helping"></i></div>
           <h3 class="card-title">Self‑Care 101 & Support Networks</h3>
           <p class="card-subtitle">Your Care Kit</p>
@@ -216,51 +249,9 @@
           </div>
         </article>
 
-        <!-- Did You Know? Highlights (interactive) -->
-        <article class="resource-card glassmorphism interactive" data-category="highlights" data-tags="facts nigeria statistics violence breathing journaling talking helps">
-          <div class="card-thumb banner"><img src="src/images/brand/website_logo.png" alt="Mental Health Facts"></div>
-          <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
-          <h3 class="card-title">Did You Know? Highlights</h3>
-          <div class="facts-rotator" aria-live="polite">
-            <ul class="facts-list" hidden>
-              <li>🧠 1 in 4 Nigerians will face mental health issues (According to WHO).</li>
-              <li>⛔ Research shows less than 10% receive professional help.</li>
-              <li>💔 33% of Nigerian women have experienced violence, increasing trauma risk.</li>
-              <li>💡 Breathing and journaling can reduce trauma and anxiety.</li>
-              <li>❤️ Talking helps — even for 15 minutes a week.</li>
-            </ul>
-            <p class="fact-text"></p>
-            <div class="fact-controls">
-              <button class="icon-btn small" type="button" data-prev aria-label="Previous fact"><i class="fas fa-chevron-left"></i></button>
-              <div class="dots" aria-hidden="true"></div>
-              <button class="icon-btn small" type="button" data-next aria-label="Next fact"><i class="fas fa-chevron-right"></i></button>
-            </div>
-          </div>
-        </article>
+        
 
-        <!-- Education Card -->
-        <article class="resource-card glassmorphism" data-category="education" data-tags="education therapy access teletherapy stigma">
-          <div class="card-icon"><i class="fas fa-book"></i></div>
-          <h3 class="card-title">Therapy Access & Education</h3>
-          <p class="card-subtitle">Facts, options, and how to get started</p>
-          <div class="card-meta">
-            <span class="meta-item"><i class="fas fa-file"></i> Google Doc</span>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-outline" href="https://docs.google.com/document/d/1D_0QYVOrM5hocqNumuOYyjHLhU6Y95d_gQkBCXaMMbo/edit?usp=sharing" target="_blank" rel="noopener">Read</a>
-          </div>
-        </article>
-
-        <!-- Crisis Support Card -->
-        <article class="resource-card glassmorphism critical" data-category="crisis" data-tags="crisis emergency help line">
-          <div class="card-icon"><i class="fas fa-phone-alt"></i></div>
-          <h3 class="card-title">Crisis Support</h3>
-          <p class="card-subtitle">In immediate danger? Please contact:</p>
-          <ul class="card-list">
-            <li><i class="fas fa-phone"></i> Emergency Services: 112</li>
-            <li><i class="fas fa-shield-alt"></i> Local Police Emergency Line</li>
-          </ul>
-        </article>
+        
       </div>
 
       <!-- Sources We Use -->

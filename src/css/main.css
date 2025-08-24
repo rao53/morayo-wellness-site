@@ -27,17 +27,20 @@
 .chip.active { background: #f5f3ff; border-color: #e9d5ff; }
 .chip { min-height: 36px; }
 
-.resource-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
+.resource-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; align-items: stretch; }
 .resource-card {
-  padding: 1.25rem; border-radius: 16px; display: flex; flex-direction: column; gap: 0.5rem;
+  padding: 1.25rem; border-radius: 16px; display: flex; flex-direction: column; gap: 0.5rem; position: relative; padding-bottom: 3.25rem;
 }
+.resource-card .card-thumb { width: 100%; height: 120px; border-radius: 12px; overflow: hidden; background: #f3e8ff; display: block; }
+.resource-card .card-thumb.banner { height: 140px; }
+.resource-card .card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .resource-card.critical { border: 2px solid rgba(239,68,68,.15); }
 .resource-card .card-icon { font-size: 1.5rem; color: #a855f7; }
 .resource-card .card-title { margin: 0.25rem 0 0; font-size: 1.125rem; }
-.resource-card .card-subtitle { color: #6b7280; margin: 0; }
+.resource-card .card-subtitle { color: #6b7280; margin: 0; font-weight: 600; }
 .resource-card .card-meta { font-size: .9rem; color: #6b7280; display: flex; gap: .75rem; }
-.resource-card .card-snippet { color: #4b5563; }
-.resource-card .card-actions { display: flex; gap: .5rem; margin-top: .25rem; }
+.resource-card .card-snippet { color: #4b5563; margin-top: .25rem; }
+.resource-card .card-actions { position: absolute; bottom: 1rem; right: 1rem; display: flex; gap: .5rem; margin-top: 0; }
 .icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 9999px; border: 1px solid rgba(168,85,247,.25); color: #6b21a8; background: #fff; }
 .icon-btn[aria-disabled="true"] { opacity: .6; cursor: not-allowed; }
 .icon-btn.small { width: 32px; height: 32px; }
@@ -46,7 +49,18 @@
 
 /* Interactive facts rotator */
 .resource-card.interactive .facts-rotator { display: grid; gap: .5rem; }
-.resource-card.interactive .fact-text { margin: 0; color: #374151; min-height: 2.25rem; }
+.resource-card.interactive { border: 2px solid rgba(168,85,247,.2); background: linear-gradient(180deg, rgba(245,243,255,.6), #fff); }
+.resource-card.interactive .fact-text { margin: 0; color: #1f2937; min-height: 2.25rem; font-weight: 600; }
+.highlights-section { margin: 1rem 0 1.5rem; padding: 1rem 1.25rem; border-radius: 16px; border: 2px solid rgba(168,85,247,.2); background: linear-gradient(90deg, rgba(245,243,255,.9), #fff); }
+.highlights-header { display: flex; align-items: center; gap: .75rem; margin-bottom: .75rem; }
+.hl-icon { font-size: 2rem; color: #a855f7; }
+.hl-title { margin: 0; }
+.infographic { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .75rem; }
+.info-tile { background: #fff; border: 1px solid rgba(168,85,247,.15); border-radius: 12px; padding: .75rem; display: grid; gap: .25rem; text-align: left; }
+.info-tile .tile-icon { font-size: 1.25rem; }
+.info-tile .stat { font-size: 1.25rem; font-weight: 800; color: #1f2937; }
+.info-tile .label { color: #4b5563; font-size: .95rem; line-height: 1.35; }
+.infographic-actions { margin-top: .75rem; }
 .resource-card.interactive .fact-controls { display: flex; align-items: center; justify-content: center; gap: .5rem; }
 .resource-card.interactive .dots { display: flex; gap: .25rem; }
 .resource-card.interactive .dots::before { content: '• • •'; color: #a855f7; letter-spacing: .25rem; }
