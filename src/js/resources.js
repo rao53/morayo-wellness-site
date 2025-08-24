@@ -41,15 +41,34 @@
 
     chips.forEach(function(chip) {
       chip.addEventListener('click', function() {
-        chips.forEach(function(c){ c.classList.remove('active'); c.setAttribute('aria-selected', 'false'); });
-        chip.classList.add('active');
-        chip.setAttribute('aria-selected', 'true');
+        var isActive = chip.classList.contains('active');
+        // toggle off to 'all' if clicking the active chip
+        if (isActive) {
+          chips.forEach(function(c){ c.classList.remove('active'); c.setAttribute('aria-selected', 'false'); });
+          var allChip = chips.find(function(c){ return c.getAttribute('data-filter') === 'all'; });
+          if (allChip) { allChip.classList.add('active'); allChip.setAttribute('aria-selected', 'true'); }
+        } else {
+          chips.forEach(function(c){ c.classList.remove('active'); c.setAttribute('aria-selected', 'false'); });
+          chip.classList.add('active');
+          chip.setAttribute('aria-selected', 'true');
+        }
         applyFilters();
       });
     });
 
     // Basic modal: open/close using data-modal-target attribute
     document.addEventListener('click', function(e) {
+      if (e.target.closest('.download-poster')) {
+        e.preventDefault();
+        var tpl = document.getElementById('poster-template');
+        if (!tpl) return;
+        var node = tpl.content.cloneNode(true);
+        var existing = document.getElementById('poster-print');
+        if (existing) existing.remove();
+        document.body.appendChild(node);
+        window.print();
+        return;
+      }
       var openBtn = e.target.closest('[data-modal-target]');
       if (openBtn) {
         var sel = openBtn.getAttribute('data-modal-target');
