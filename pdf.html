@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF • Morayo Wellness Initiative</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="src/css/main.css">
+  <style>
+    .pdf-shell { min-height: 100vh; display: flex; flex-direction: column; background: #f8fafc; }
+    .pdf-toolbar { position: sticky; top: 0; z-index: 10; background: #111827; color: #fff; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .pdf-toolbar .container { display: flex; align-items: center; gap: .75rem; padding: .75rem 1rem; }
+    .pdf-toolbar img { width: 28px; height: 28px; border-radius: 6px; background: #fff; padding: 2px; object-fit: contain; }
+    .pdf-toolbar h1 { font-size: 1rem; font-weight: 800; margin: 0; letter-spacing: .2px; }
+    .pdf-actions { margin-left: auto; display: flex; gap: .5rem; }
+    .pdf-actions .btn { padding: .5rem .75rem; border-radius: .5rem; border: 1px solid rgba(255,255,255,.15); color: #fff; text-decoration: none; font-weight: 700; font-size: .9rem; }
+    .pdf-actions .btn:hover { background: rgba(255,255,255,.06); }
+    .pdf-frame-wrap { flex: 1; display: grid; place-items: center; padding: 1rem; }
+    .pdf-frame { width: 100%; height: calc(100vh - 64px); border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,.05); }
+    @media (max-width: 768px) { .pdf-frame { height: calc(100vh - 56px); } .pdf-toolbar h1 { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="pdf-shell">
+    <header class="pdf-toolbar">
+      <div class="container">
+        <a href="resources.html" class="btn" style="background: rgba(255,255,255,.06);">← Back</a>
+        <img src="src/images/brand/website_logo.png" alt="Morayo Wellness Initiative"/>
+        <h1 id="docTitle">Resource</h1>
+        <div class="pdf-actions">
+          <a id="themeBtn" class="btn" href="#">Themed copy</a>
+          <a id="downloadBtn" class="btn" href="#" download>Download</a>
+          <a id="openNewBtn" class="btn" href="#" target="_blank" rel="noopener">Open in new tab</a>
+        </div>
+      </div>
+    </header>
+    <main class="pdf-frame-wrap">
+      <iframe id="pdfFrame" class="pdf-frame" src="" title="PDF Viewer" loading="lazy"></iframe>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script>
+    (function(){
+      var params = new URLSearchParams(window.location.search);
+      var file = params.get('file');
+      var title = params.get('title') || 'Resource';
+      var frame = document.getElementById('pdfFrame');
+      var dl = document.getElementById('downloadBtn');
+      var openNew = document.getElementById('openNewBtn');
+      var themeBtn = document.getElementById('themeBtn');
+      var h = document.getElementById('docTitle');
+      if (!file) { h.textContent = 'Missing file'; return; }
+      h.textContent = decodeURIComponent(title);
+      frame.src = file;
+      dl.href = file;
+      var cleanName = 'Morayo-' + (title || 'resource').replace(/\s+/g,'-').replace(/[^\w\-]/g,'');
+      dl.setAttribute('download', cleanName + '.pdf');
+      openNew.href = file;
+      document.title = h.textContent + ' • Morayo Wellness Initiative';
+
+      // Optional: generate a themed/stamped copy with site header/footer
+      async function makeThemedCopy() {
+        try {
+          const pdfBytes = await fetch(file).then(r => r.arrayBuffer());
+          const logoBytes = await fetch('src/images/brand/website_logo.png').then(r => r.arrayBuffer());
+          const { PDFDocument, rgb, StandardFonts } = PDFLib;
+          const doc = await PDFDocument.load(pdfBytes);
+          const logoImg = await doc.embedPng(logoBytes);
+          const helv = await doc.embedFont(StandardFonts.HelveticaBold);
+          const small = await doc.embedFont(StandardFonts.Helvetica);
+          const brand = { dark: rgb(0.066, 0.090, 0.165), accent: rgb(0.463, 0.329, 0.910) };
+          const pages = doc.getPages();
+          pages.forEach((p, idx) => {
+            const { width, height } = p.getSize();
+            // header band
+            const bandH = 32;
+            p.drawRectangle({ x: 0, y: height - bandH, width, height: bandH, color: brand.dark });
+            const logoW = 18;
+            const logoH = (logoW / logoImg.width) * logoImg.height;
+            p.drawImage(logoImg, { x: 12, y: height - bandH + (bandH - logoH)/2, width: logoW, height: logoH });
+            p.drawText('Morayo Wellness Initiative — ' + h.textContent, { x: 12 + logoW + 8, y: height - 22, size: 10, font: helv, color: rgb(1,1,1) });
+            // footer band
+            const footH = 18;
+            p.drawRectangle({ x: 0, y: 0, width, height: footH, color: brand.dark });
+            p.drawText('morayowellness.org', { x: 12, y: 6, size: 8, font: small, color: rgb(1,1,1) });
+            p.drawText(String(idx+1) + ' / ' + String(pages.length), { x: width - 36, y: 6, size: 8, font: small, color: rgb(1,1,1) });
+          });
+          const themed = await doc.save();
+          const blob = new Blob([themed], { type: 'application/pdf' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = cleanName + '-THEMED.pdf';
+          document.body.appendChild(a); a.click(); a.remove();
+          setTimeout(() => URL.revokeObjectURL(url), 1000);
+        } catch (err) {
+          console.error(err);
+          alert('Could not theme this PDF. The original will remain available.');
+        }
+      }
+      themeBtn.addEventListener('click', function(e){ e.preventDefault(); makeThemedCopy(); });
+    })();
+  </script>
+</body>
+</html>
+
+

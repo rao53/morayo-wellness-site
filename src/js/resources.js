@@ -56,8 +56,34 @@
       });
     });
 
+    // Helper: secure download via Blob (avoids insecure download blocked)
+    function secureDownload(url, suggestedName) {
+      fetch(url, { cache: 'no-store' })
+        .then(function(r){ return r.ok ? r.blob() : Promise.reject(new Error('Download failed')); })
+        .then(function(blob){
+          var objectUrl = URL.createObjectURL(blob);
+          var a = document.createElement('a');
+          a.href = objectUrl;
+          if (suggestedName) a.download = suggestedName;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          setTimeout(function(){ URL.revokeObjectURL(objectUrl); }, 1000);
+        })
+        .catch(function(err){ console.error(err); window.location.href = url; });
+    }
+
     // Basic modal: open/close using data-modal-target attribute
     document.addEventListener('click', function(e) {
+      // Intercept direct PDF downloads and pipe through secure blob download
+      var pdfLink = e.target.closest('a[href$=".pdf"]');
+      if (pdfLink) {
+        e.preventDefault();
+        var href = pdfLink.getAttribute('href');
+        var name = pdfLink.getAttribute('download');
+        secureDownload(href, name);
+        return;
+      }
       if (e.target.closest('.download-poster')) {
         e.preventDefault();
         var tpl = document.getElementById('poster-template');
@@ -66,6 +92,20 @@
         var existing = document.getElementById('poster-print');
         if (existing) existing.remove();
         document.body.appendChild(node);
+
+        // Set a friendly title so the browser suggests a neat PDF name
+        var prevTitle = document.title;
+        document.title = 'Morayo-Wellness-Did-You-Know';
+
+        // Clean up after printing
+        var cleanup = function() {
+          var el = document.getElementById('poster-print');
+          if (el) el.remove();
+          document.title = prevTitle;
+          window.removeEventListener('afterprint', cleanup);
+        };
+        window.addEventListener('afterprint', cleanup);
+
         window.print();
         return;
       }
